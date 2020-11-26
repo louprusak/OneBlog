@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb831f5d-f994-49dd-b3fd-799c165f0896" name="Default Changelist" comment="" />
+    <list default="true" id="fb831f5d-f994-49dd-b3fd-799c165f0896" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajoutcommentaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/ajoutcommentaire.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +26,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1kkRm2oD3hAGPfmmECl8smqgGcZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,11 +59,23 @@
       <updated>1606242759589</updated>
       <workItem from="1606242761422" duration="414000" />
       <workItem from="1606246721449" duration="5691000" />
+      <workItem from="1606424381140" duration="6579000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="775" y="243" key="NewPhpClassDialog" timestamp="1606251049748">
@@ -66,9 +91,9 @@
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="229" y="98" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1606243069933" />
-    <state x="-967" y="0" width="974" height="1047" key="dock-window-1" timestamp="1606251617441">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="773" y="78" width="1414" height="1012" key="dock-window-1" timestamp="1606428860509">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-967" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606251617441" />
+    <state x="773" y="78" width="1414" height="1012" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606428860509" />
   </component>
 </project>
