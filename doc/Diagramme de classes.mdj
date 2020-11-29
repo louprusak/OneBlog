@@ -63,7 +63,7 @@
 											"top": 679,
 											"width": 230,
 											"height": 13,
-											"text": "admin"
+											"text": "Admin"
 										},
 										{
 											"_type": "LabelView",
@@ -294,7 +294,7 @@
 											"top": 239,
 											"width": 278,
 											"height": 13,
-											"text": "visiteur"
+											"text": "Visitor"
 										},
 										{
 											"_type": "LabelView",
@@ -613,7 +613,7 @@
 											"top": 103,
 											"width": 286,
 											"height": 13,
-											"text": "commentaire"
+											"text": "Comment"
 										},
 										{
 											"_type": "LabelView",
@@ -915,7 +915,7 @@
 											"top": 255,
 											"width": 310,
 											"height": 13,
-											"text": "news"
+											"text": "News"
 										},
 										{
 											"_type": "LabelView",
@@ -2390,7 +2390,7 @@
 											"top": 567,
 											"width": 318,
 											"height": 13,
-											"text": "user"
+											"text": "User"
 										},
 										{
 											"_type": "LabelView",
@@ -2802,7 +2802,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "admin",
+					"name": "Admin",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -2866,7 +2866,8 @@
 								"$ref": "AAAAAAF2ABJdf8EnmKg="
 							},
 							"name": "login",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2875,7 +2876,8 @@
 								"$ref": "AAAAAAF2ABJdf8EnmKg="
 							},
 							"name": "mdp",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -2895,7 +2897,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "visiteur",
+					"name": "Visitor",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -2985,7 +2987,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF2ABo0lsUwfcQ="
 							},
-							"name": "commentaire",
+							"name": "Comment",
 							"ownedElements": [
 								{
 									"_type": "UMLAssociation",
@@ -3050,7 +3052,8 @@
 										"$ref": "AAAAAAF2AAFpgMBBPSE="
 									},
 									"name": "auteur",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								},
 								{
 									"_type": "UMLAttribute",
@@ -3059,7 +3062,8 @@
 										"$ref": "AAAAAAF2AAFpgMBBPSE="
 									},
 									"name": "message",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								}
 							],
 							"operations": [
@@ -3111,7 +3115,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF2ABo0lsUwfcQ="
 							},
-							"name": "news",
+							"name": "News",
 							"ownedElements": [
 								{
 									"_type": "UMLAssociation",
@@ -3149,7 +3153,8 @@
 										"$ref": "AAAAAAF2AAR5acBrV04="
 									},
 									"name": "date",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								},
 								{
 									"_type": "UMLAttribute",
@@ -3158,7 +3163,8 @@
 										"$ref": "AAAAAAF2AAR5acBrV04="
 									},
 									"name": "titre",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								},
 								{
 									"_type": "UMLAttribute",
@@ -3167,7 +3173,8 @@
 										"$ref": "AAAAAAF2AAR5acBrV04="
 									},
 									"name": "contenu",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								},
 								{
 									"_type": "UMLAttribute",
@@ -3176,7 +3183,8 @@
 										"$ref": "AAAAAAF2AAR5acBrV04="
 									},
 									"name": "auteur",
-									"visibility": "private"
+									"visibility": "private",
+									"type": ""
 								}
 							],
 							"operations": [
@@ -3262,7 +3270,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "user",
+					"name": "User",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -3286,7 +3294,8 @@
 								"$ref": "AAAAAAF2ACXRzc7dhQk="
 							},
 							"name": "login",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3295,7 +3304,8 @@
 								"$ref": "AAAAAAF2ACXRzc7dhQk="
 							},
 							"name": "mdp",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
