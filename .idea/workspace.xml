@@ -6,21 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb831f5d-f994-49dd-b3fd-799c165f0896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/indexAdmin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/Connection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/Visitor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateways/GtwComment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateways/GtwNews.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajoutcommentaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/addComment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion.html" beforeDir="false" afterPath="$PROJECT_DIR$/connection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erreur.html" beforeDir="false" afterPath="$PROJECT_DIR$/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Commentaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recherche.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addComment.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/addComment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/connection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/indexAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Visitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/metiers/Visitor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +64,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/metiers" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/views" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +84,7 @@
       <workItem from="1606246721449" duration="5691000" />
       <workItem from="1606424381140" duration="7150000" />
       <workItem from="1606642247801" duration="2749000" />
+      <workItem from="1606771538404" duration="3632000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de nouvelles vue html pour le site du blog">
       <created>1606431183610</created>
@@ -108,10 +120,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="337" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606642612492" />
-    <state x="775" y="243" key="NewPhpClassDialog" timestamp="1606643302192">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="581" y="229" key="NewPhpClassDialog" timestamp="1606775012778">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="775" y="243" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606643302192" />
+    <state x="581" y="229" key="NewPhpClassDialog/0.25.1440.875@0.25.1440.875" timestamp="1606775012778" />
     <state x="720" y="434" key="NewPhpFileDialog" timestamp="1606250351802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
