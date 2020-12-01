@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Connexion</title>
-    <link href="css/bootstrap.css" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
+    <title>Rechercher</title>
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="js/scroll-animate.js"></script>
 </head>
 
@@ -20,7 +20,7 @@
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
                 <a class="btn" href="addComment.html">Commentaire</a>
-                <a class="btn" href="#">Admin</a>
+                <a class="btn" href="connection.html">Admin</a>
                 <a class="btn" href="search.html">Rechercher</a>
             </nav>
         </div>
@@ -34,23 +34,18 @@
     </header>
 
 
-    <div id="connexion-container" class="row">
-        <div id="connexion" class="col-lg-12">
-            <h1>Connexion</h1>
+    <div id="recherche-container" class="row">
+        <div id="recherche" class="col-lg-12">
+            <h1 id="titre-recherche">Rechercher une News</h1>
             <hr id="separateur">
             <br>
-            <h5>Veuillez entrer votre login et votre mot de passe pour vous connecter :</h5>
+            <h5 id="auteur-news">Veuillez entrer une date pour trouver la news correspondante:</h5>
+            <h5 id="auteur-news">Format attendu : DD / MM / YYYY</h5>
             <br>
             <form>
-                <label for="login">Login</label>
-                <br>
-                <input type="text" name="login" id="login">
-                <br>
-                <label for="mdp">Mot de Passe</label>
-                <br>
-                <input type="text" name="mdp" id="mdp">
+                <input type="text" name="datenews">
                 <br><br><br>
-                <input type="submit" value="Se connecter">
+                <input type="submit" value="Rechercher">
             </form>
         </div>
     </div>
