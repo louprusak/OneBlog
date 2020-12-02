@@ -15,13 +15,13 @@
 <div id="container-fluide">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="index.html"><p>Mon Blog</p></a>
+            <a class="Titre"href="../views/index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
-                <a class="btn" href="addComment.html">Commentaire</a>
-                <a class="btn" href="connection.html">Admin</a>
-                <a class="btn" href="search.html">Rechercher</a>
+                <a class="btn" href="addComment.php">Commentaire</a>
+                <a class="btn" href="connection.php">Admin</a>
+                <a class="btn" href="search.php">Rechercher</a>
             </nav>
         </div>
         <div class="col-xs-6 col-md-6 col-lg-1">

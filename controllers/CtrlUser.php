@@ -48,3 +48,5 @@ class CtrlUser
         $user->deleteComment();
     }
 }
+
+?>

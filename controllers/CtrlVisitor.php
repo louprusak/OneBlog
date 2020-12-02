@@ -5,25 +5,30 @@ class CtrlVisitor
 {
     public function __construct(){
         $action = $_GET['action'] ?? null;
+        echo $action;
 
         try{
             switch(strtolower($action)){
-
+                case $action='search':
+                    $this->searchNews();
+                default:
+                    require('../views/error.php');
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de donnée.';
             require('../views/error.php');
         }catch (Exception $e2){
             $erreur = 'Erreur lors de l\'éxécution du code du controller visiteur';
-            require('../views/erro.php');
+            require('../views/error.php');
         }
     }
 
     public function searchNews()
     {
-        $mdl = new model.User;
+        echo 'coucou';
+        /*$mdl = new model.User;
         $user = $mdl->getUser();
-        $user->getNewsByDate();
+        $user->getNewsByDate();*/
     }
 
     public function addComment()
@@ -33,3 +38,7 @@ class CtrlVisitor
         require('../views/addComment.php');
     }
 }
+
+new CtrlVisitor();
+
+?>
