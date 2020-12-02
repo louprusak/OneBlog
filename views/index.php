@@ -19,9 +19,9 @@
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
-                <a class="btn" href="addComment.html">Commentaire</a>
-                <a class="btn" href="connection.html">Admin</a>
-                <a class="btn" href="search.html">Rechercher</a>
+                <a class="btn" href="addComment.php">Commentaire</a>
+                <a class="btn" href="connection.php">Admin</a>
+                <a class="btn" href="search.php">Rechercher</a>
             </nav>
         </div>
 
@@ -31,9 +31,9 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <a href="news.html">Exemple de lien menant vers la page complete d'une news</a><br>
-            <a href="error.html">Exemple de lien menant vers la page d'erreur</a><br>
-            <a href="indexAdmin.html">Exemple de lien menant vers la page principale admin</a>
+            <a href="news.php">Exemple de lien menant vers la page complete d'une news</a><br>
+            <a href="error.php">Exemple de lien menant vers la page d'erreur</a><br>
+            <a href="indexAdmin.php">Exemple de lien menant vers la page principale admin</a>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
                     Ceci est le texte écourté de la news qui s'affiche.
                     Ceci est le texte écourté de la news qui s'affiche.
                     Ceci est le texte écourté de la news qui s'affiche.....</p>
-                <a href="news.html">Lire la suite</a>
+                <a href="news.php">Lire la suite</a>
             </div>
 
         </div>
