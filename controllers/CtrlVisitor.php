@@ -8,7 +8,10 @@ class CtrlVisitor
 
         try{
             switch(strtolower($action)){
-
+                case $action='search':
+                    $this->searchNews();
+                default:
+                    require('../views/error.html');
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de donnée.';
@@ -21,9 +24,10 @@ class CtrlVisitor
 
     public function searchNews()
     {
-        $mdl = new model.User;
+        echo 'coucou';
+        /*$mdl = new model.User;
         $user = $mdl->getUser();
-        $user->getNewsByDate();
+        $user->getNewsByDate();*/
     }
 
     public function addComment()
@@ -33,3 +37,7 @@ class CtrlVisitor
         require('../views/addComment.php');
     }
 }
+
+new CtrlVisitor();
+
+?>
