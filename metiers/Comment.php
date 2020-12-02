@@ -1,7 +1,7 @@
 <?php
 
 
-class Commentaire
+class Comment
 {
     private $auteur;
 

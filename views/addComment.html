@@ -4,10 +4,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Ajouter un commentaire</title>
-    <link href="css/bootstrap.css" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="js/scroll-animate.js"></script>
 </head>
 
@@ -20,8 +20,8 @@
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
                 <a class="btn" href="#">Commentaire</a>
-                <a class="btn" href="#">Admin</a>
-                <a class="btn" href="#">Rechercher</a>
+                <a class="btn" href="connection.html">Admin</a>
+                <a class="btn" href="search.html">Rechercher</a>
             </nav>
         </div>
 
@@ -30,14 +30,21 @@
     </header>
 
     <div class="row">
-        <div id="formulaire" class="col-xs-12 col-md-12 col-lg-12">
-            <form action="" method="post">
+        <div id="ajoutcommentaire" class="col-xs-12 col-md-12 col-lg-12">
+            <h1 id="titre-ajoutcommentaire">Ajouter un commentaire</h1>
+            <hr id="separateur">
+            <br>
+            <h5 id="auteur-news">Veuillez saisir les informations suivantes pour poster votre commentaire :</h5>
+            <br>
+            <form action="" method="post" id="form-commentaire">
                 <label for="pseudo">Votre Pseudo :</label>
+                <br>
                 <input type="text" name="pseudo" id="pseudo">
                 <br>
                 <label for="commentaire">Votre Commentaire :</label>
-                <textarea name="commentaire" cols="50" id="commentaire"></textarea>
                 <br>
+                <textarea name="commentaire" cols="120" rows="7" re id="commentaire"></textarea>
+                <br><br>
                 <input type="submit" value="Envoyer le commentaire"/>
             </form>
         </div>
