@@ -3,19 +3,40 @@
 
 class ModelNews
 {
+    private $gateway;
+
+    public function __construct()
+    {
+        $this->gateway = new GtwNews();
+    }
+
     public function addNews()
     {
-
+        $this->gateway->addNews();
     }
 
     public function deleteNews($idNews)
     {
-
+        $this->gateway->deleteNews();
     }
 
-    public function getNewsByDate()
+    public function getAllNews()
     {
-        $gtw = new GtwNews('blog','root','');
-        $gtw->addNews($gtw->getConnection(),$_POST['date'],$_POST['titre'],$_POST['contenu'],$_POST['auteur']);
+        return $this->gateway->getAllNews();
+    }
+
+    public function getNbNews()
+    {
+        return $this->gateway->getnbNews();
+    }
+
+    public function getNewsByUser($user)
+    {
+        return $this->gateway->getNewsByUser($user);
+    }
+
+    public function getNewsByDate($date)
+    {
+        return $this->gateway->getNewsByDate($date);
     }
 }

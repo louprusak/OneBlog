@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div id="container-fluide">
+<div id="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
             <a class="Titre"href="#"><p>Mon Blog</p></a>
