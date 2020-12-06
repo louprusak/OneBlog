@@ -1,6 +1,7 @@
 <?php
 
 
+
 class GtwNews
 {
     private $con;
@@ -9,7 +10,7 @@ class GtwNews
 
     protected static $username = 'root';
 
-    protected static $password = '';
+    protected static $password = 'root';
 
 
     private $tabAllNews;

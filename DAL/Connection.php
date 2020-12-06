@@ -4,6 +4,12 @@ class Connection extends PDO {
 
     private $stmt;
 
+    /**
+     * Connection constructor.
+     * @param string $dsn
+     * @param string $username
+     * @param string $password
+     */
     public function __construct(string $dsn, string $username, string $password) {
 
         parent::__construct($dsn,$username,$password);
@@ -31,4 +37,4 @@ class Connection extends PDO {
     }
 }
 
-?>
+

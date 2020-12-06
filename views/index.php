@@ -41,6 +41,9 @@
 
     <div>
         <?php
+
+
+
             if(isset($listNews)){
                 foreach ($listNews as $News) {
                     echo '
