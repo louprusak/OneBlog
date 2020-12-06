@@ -3,29 +3,43 @@
 
 class News
 {
+    private $idNews;
+
     private $date;
 
     private $titre;
 
-    private $contenu;
+    private $description;
+
+    private $lien;
 
     private $auteur;
 
 
-    function __construct($date,$titre,$contenu,$auteur)
+    function __construct($idNews,$date,$titre,$description,$lien,$auteur)
     {
+        $this->idNews = $idNews;
         $this->date = $date;
         $this->titre = $titre;
-        $this->contenu = $contenu;
+        $this->description = $description;
+        $this->lien = $lien;
         $this->auteur = $auteur;
     }
 
     /**
      * @return mixed
      */
-    public function getContenu()
+    public function getIdNews()
     {
-        return $this->contenu;
+        return $this->idNews;
+    }
+
+    /**
+     * @param mixed $idNews
+     */
+    public function setIdNews($idNews)
+    {
+        $this->idNews = $idNews;
     }
 
     /**
@@ -37,30 +51,6 @@ class News
     }
 
     /**
-     * @return mixed
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAuteur()
-    {
-        return $this->auteur;
-    }
-
-    /**
-     * @param mixed $contenu
-     */
-    public function setContenu($contenu)
-    {
-        $this->contenu = $contenu;
-    }
-
-    /**
      * @param mixed $date
      */
     public function setDate($date)
@@ -69,11 +59,59 @@ class News
     }
 
     /**
+     * @return mixed
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
      * @param mixed $titre
      */
     public function setTitre($titre)
     {
         $this->titre = $titre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLien()
+    {
+        return $this->lien;
+    }
+
+    /**
+     * @param mixed $lien
+     */
+    public function setLien($lien)
+    {
+        $this->lien = $lien;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
     }
 
     /**

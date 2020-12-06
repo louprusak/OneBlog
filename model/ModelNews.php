@@ -1,7 +1,7 @@
 <?php
 
 
-class News
+class ModelNews
 {
     public function addNews()
     {

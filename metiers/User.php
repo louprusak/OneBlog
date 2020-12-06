@@ -1,22 +1,38 @@
 <?php
 
 
-class User extends Visitor
+class User
 {
+    private $idUser;
+
     private $login;
 
     private $password;
 
-    public function addNews(){
+    private $role;
 
+    public function __construct($idUser,$login,$password,$role)
+    {
+        $this->idUser = $idUser;
+        $this->login = $login;
+        $this->password = $password;
+        $this->role = $role;
     }
 
-    public function deleteNews(){
-
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
     }
 
-    public function connection(){
-
+    /**
+     * @param mixed $idUser
+     */
+    public function setId($idUser)
+    {
+        $this->idUser = $idUser;
     }
 
     /**
@@ -49,5 +65,21 @@ class User extends Visitor
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 }

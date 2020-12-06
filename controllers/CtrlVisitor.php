@@ -25,7 +25,7 @@ class CtrlVisitor
     public function searchNews()
     {
         echo 'coucou';
-        /*$mdl = new model.User;
+        /*$mdl = new model.ModelUser;
         $user = $mdl->getUser();
         $user->getNewsByDate();*/
     }
