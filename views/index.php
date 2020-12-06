@@ -39,72 +39,29 @@
 
     <br><br><br><br><br>
 
-    <div class="row">
-        <div id="index-news" class="col-lg-12">
-            <div id="index-news-contenu">
-                <h6>Loup RUSAK le 10/01/2020</h6>
-                <hr id="hr2">
-                <h2>Titre de la news</h2>
+    <div>
+        <?php
+            if(isset($listNews)){
+                foreach ($listNews as $News) {
+                    echo '
+                    <div class="row">
+                        <div id="index-news" class="col-lg-12">
+                            <div id="index-news-contenu">
+                                <h6>'.$News->getAuteur().'le'. $News->getDate().'</h6>
+                                <hr id="hr2">
+                                <h2>'.$News->getTitre().'</h2>
 
-                <p>Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.....</p>
-                <a href="news.php">Lire la suite</a>
-            </div>
+                                <p>'.$News->getDescription().'</p>
+                                <a href="news.php">Lire la suite</a>
+                            </div>
 
-        </div>
+                        </div>
+                    </div>';
+                }
+            }
+        ?>
     </div>
 
-    <div class="row">
-        <div id="index-news" class="col-lg-12">
-            <div id="index-news-contenu">
-                <h6>Loup RUSAK le 10/01/2020</h6>
-                <hr id="hr2">
-                <h2>Titre de la news</h2>
-
-                <p>Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.....</p>
-                <a href="">Lire la suite</a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="index-news" class="col-lg-12">
-            <div id="index-news-contenu">
-                <h6>Loup RUSAK le 10/01/2020</h6>
-                <hr id="hr2">
-                <h2>Titre de la news</h2>
-
-                <p>Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.....</p>
-                <a href="">Lire la suite</a>
-            </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div id="index-news" class="col-lg-12">
-            <div id="index-news-contenu">
-                <h6>Loup RUSAK le 10/01/2020</h6>
-                <hr id="hr2">
-                <h2>Titre de la news</h2>
-
-                <p>Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.
-                    Ceci est le texte écourté de la news qui s'affiche.....</p>
-                <a href="">Lire la suite</a>
-            </div>
-
-        </div>
-    </div>
 
 </div>
 </body>
