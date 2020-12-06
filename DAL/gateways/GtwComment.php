@@ -3,24 +3,50 @@
 
 class GtwComment
 {
+    protected static $dsn='mysql:host=localhost;dbname=blog';
+    protected static $username='root';
+    protected static $password='';
     private $con;
+    private $tabAllComment;
+    private $tabCommentByNews;
 
-    public function __construct($dsn,$username,$password)
-    {
+    public function __construct(){
+        global $dsn, $username, $password;
         $con = new Connection($dsn,$username,$password);
-
-        // mettre la suite du code donné dans l'exemple de la classe connection
+        $this->tabAllComment=array();
+        $this->tabCommentByNews=array();
     }
 
-    public function addComment($con,$auteur,$message){
-        $query = 'insert into comment(auteur,message) values($auteur,$message)';
-        $con->executeQuery($query,);
+    public function addComment($idNews, $auteur, $message){
+        $query='INSERT INTO comment(idNews, auteur, message) VALUES(:idNews, :auteur, :message)';
+        $this->con->executeQuery($query,array(':idNews'=>$idNews, ':auteur'=>$auteur, ':message'=>$message));
     }
 
-    public function listerCommentaires($con,$date):LinkedList{
+    public function getCommentByNews($idNews){
+        $query = 'SELECT * FROM comment WHERE idNews = :idNews';
+        $this->con->executeQuery($query,array(':idNews'=>$idNews));
+        $results=$this->con->getResults();
+        foreach ($results as $row){
+            $this->tabCommentByNews[] = new Comment($row['idComment'],$row['idNews'],$row['auteur'],$row['message']);
+        }
+        return $this->tabCommentByNews;
+    }
 
-        $query = 'SELECT date,titre,contenu,auteur FROM news WHERE date =' . $date;
-        $liste = $con->executeQuery($query,);
-        return $liste;
+    public function getNbComment(){
+        $query = 'SELECT COUNT(*) FROM comment';
+        $this->con->executeQuery($query);
+        return $this->con->getResults();
+    }
+
+    public function getNbCommentByNews($idNews){
+        $query = 'SELECT COUNT(*) FROM comment WHERE idNews = :idNews';
+        $this->con->executeQuery($query,array(':idNews'=>$idNews));
+        return $this->con->getResults();
+    }
+
+    public function getNbCommentByUser($idUser){
+        $query = 'SELECT COUNT(*) FROM comment WHERE auteur = :idUser';
+        $this->con->executeQuery($query,array(':idUser'=>$idUser));
+        return $this->con->getResults();
     }
 }
