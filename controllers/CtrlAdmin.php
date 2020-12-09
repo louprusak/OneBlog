@@ -1,7 +1,7 @@
 <?php
 
 
-class CtrlAdmin
+class CtrlAdmin extends CtrlUser
 {
     public function __construct()
     {
@@ -9,7 +9,11 @@ class CtrlAdmin
 
         try{
             switch(strtolower($action)){
+                case $action='connection':
+                    $this->connection();
 
+                case $action='search':
+                    $this->searchNews();
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de données.';
@@ -22,9 +26,7 @@ class CtrlAdmin
 
     public function connection()
     {
-        $mdl = new model.User;
-        $user = $mdl->getUser();
-        require('../views/connection.php');
+
     }
 
     public function searchNews()
@@ -36,10 +38,11 @@ class CtrlAdmin
 
     public function addComment()
     {
-        $mdl = new model.User;
+        $mdl = new ModelUser();
         $user = $mdl->getUser();
-        require('../views/addComment.php');
+        require('/views/addComment.php');
     }
+
 
     public function deleteComment()
     {

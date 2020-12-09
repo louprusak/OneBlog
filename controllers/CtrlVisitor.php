@@ -3,7 +3,8 @@
 
 class CtrlVisitor
 {
-    public function __construct(){
+    public function __construct()
+    {
         $action = $_GET['action'] ?? null;
 
         try{
@@ -11,8 +12,16 @@ class CtrlVisitor
                 case null:
                 case $action='search':
                     $this->searchNews();
+
                 case $action='display':
                     $this->displayNews();
+
+                case $action='addComment':
+                    $this->addComment();
+
+                case $action='register':
+                    $this->register();
+
                 default:
                     require('../views/error.html');
             }
@@ -39,6 +48,11 @@ class CtrlVisitor
         /*$mdl = new model.User;
         $user = $mdl->getUser();*/
         require('../views/addComment.php');
+    }
+
+    public function register()
+    {
+        require('/views/inscription.php');
     }
 
     public function displayNews()
