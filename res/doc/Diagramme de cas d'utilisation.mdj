@@ -18,7 +18,58 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Main",
-					"defaultDiagram": true
+					"defaultDiagram": true,
+					"ownedViews": [
+						{
+							"_type": "HyperlinkView",
+							"_id": "AAAAAAF2SDenuJw3Br4=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAF2SDent5w12Ws="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2SDenuJw4VsE=",
+									"_parent": {
+										"$ref": "AAAAAAF2SDenuJw3Br4="
+									},
+									"font": "Arial;13;0",
+									"left": 271.39453125,
+									"top": 197,
+									"width": 109.82080078125,
+									"height": 13,
+									"text": "UseCaseDiagram1"
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAF2SDenuJw5iR0=",
+									"_parent": {
+										"$ref": "AAAAAAF2SDenuJw3Br4="
+									},
+									"font": "Arial;13;1",
+									"left": 239,
+									"top": 197,
+									"width": 23.39453125,
+									"height": 13,
+									"text": "link"
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 234,
+							"top": 192,
+							"width": 153.21533203125,
+							"height": 23,
+							"nameLabel": {
+								"$ref": "AAAAAAF2SDenuJw4VsE="
+							},
+							"typeLabel": {
+								"$ref": "AAAAAAF2SDenuJw5iR0="
+							}
+						}
+					]
 				},
 				{
 					"_type": "UMLUseCaseDiagram",
@@ -5565,6 +5616,17 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Supprimer une de ses news"
+				},
+				{
+					"_type": "Hyperlink",
+					"_id": "AAAAAAF2SDent5w12Ws=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Hyperlink1",
+					"reference": {
+						"$ref": "AAAAAAF1/+/OdHR7iqk="
+					}
 				}
 			]
 		}

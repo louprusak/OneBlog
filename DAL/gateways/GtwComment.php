@@ -22,7 +22,7 @@ class GtwComment
         $this->con->executeQuery($query,array(':idNews'=>$idNews, ':auteur'=>$auteur, ':message'=>$message));
     }
 
-    public function getCommentByNews($idNews){
+    public function getCommentByNews($idNews):array{
         $query = 'SELECT * FROM comment WHERE idNews = :idNews';
         $this->con->executeQuery($query,array(':idNews'=>$idNews));
         $results=$this->con->getResults();
@@ -32,19 +32,19 @@ class GtwComment
         return $this->tabCommentByNews;
     }
 
-    public function getNbComment(){
+    public function getNbComment():int{
         $query = 'SELECT COUNT(*) FROM comment';
         $this->con->executeQuery($query);
         return $this->con->getResults();
     }
 
-    public function getNbCommentByNews($idNews){
+    public function getNbCommentByNews($idNews):int{
         $query = 'SELECT COUNT(*) FROM comment WHERE idNews = :idNews';
         $this->con->executeQuery($query,array(':idNews'=>$idNews));
         return $this->con->getResults();
     }
 
-    public function getNbCommentByUser($idUser){
+    public function getNbCommentByUser($idUser):int{
         $query = 'SELECT COUNT(*) FROM comment WHERE auteur = :idUser';
         $this->con->executeQuery($query,array(':idUser'=>$idUser));
         return $this->con->getResults();

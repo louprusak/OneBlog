@@ -3,6 +3,9 @@
 
 class User
 {
+
+
+
     private $idUser;
 
     private $login;

@@ -13,21 +13,21 @@ class GtwUser
         $con = new Connection($dsn,$username,$password);
     }
 
-    public function addUser($login, $password, $role){
+    public function addUser(string $login, string $password, bool $role){
         $query='INSERT INTO user(login, password, role) VALUES(:login, :password, :role )';
         $this->con->executeQuery($query,array(':login'=>$login, ':password'=>$password, ':role'=>$role));
     }
 
-    public function isAdmin($idUser){
-        $query = 'SELECT role FROM user WHERE idUser = :idUser';
-        $this->con->executeQuery($query,array(':idUser'=>$idUser));
+    public function isAdmin(string $login):bool{
+        $query = 'SELECT role FROM user WHERE login = :login';
+        $this->con->executeQuery($query,array(':login'=>$login));
         $results=$this->con->getResults();
         if($results==1) return true;
         return false;
     }
 
-    public function checkConnection($login, $password){
-        if(checkLogin($login)){
+    public function exist(string $login, string $password):bool{
+        if($this->existLogin($login)){
             $query='SELECT password FROM user WHERE password = :password';
             $this->con->executeQuery($query, array(':password'=>$password));
             $results=$this->con->getResults();
@@ -37,7 +37,7 @@ class GtwUser
         return false;
     }
 
-    public function checkLogin($login){
+    public function existLogin(string $login):bool{
         $query='SELECT login FROM user WHERE login = :login';
         $this->con->executeQuery($query, array(':login'=>$login));
         $results=$this->con->getResults();
