@@ -30,19 +30,19 @@ class GtwNews
 
     }
 
-    public function addNews($date,$titre,$description,$auteur)
+    public function addNews(DateTime $date,string $titre,string $description,string $auteur)
     {
         $query = 'INSERT INTO news(date,titre,description,auteur) VALUES(:date,:titre,:description,:auteur)';
         $this->con->executeQuery($query,array(':date'=>$date,':titre'=>$titre,':description'=>$description,':auteur'=>$auteur));
     }
 
-    public function deleteNews($titre)
+    public function deleteNews(string $titre)
     {
         $query = 'DELETE FROM news WHERE idNews=:titre';
         $this->con->executeQuery($query,array(':titre'=>$titre));
     }
 
-    public function getAllNews()
+    public function getAllNews():array
     {
         $query = 'SELECT * FROM news ORDER BY desc date';
         $this->con->executeQuery($query,null);
@@ -53,7 +53,7 @@ class GtwNews
         return $this->tabAllNews;
     }
 
-    public function getNbNews()
+    public function getNbNews():int
     {
         $query = 'SELECT count(*) FROM news';
         $this->con->executeQuery($query);
@@ -61,7 +61,7 @@ class GtwNews
     }
 
 
-    public function getNewsByDate($date)
+    public function getNewsByDate(DateTime $date):array
     {
         $query = 'SELECT * FROM news WHERE date=:date';
         $this->con->executeQuery($query,array(':date'=>$date));
@@ -72,7 +72,7 @@ class GtwNews
         return $this->tabNewsByDate;
     }
 
-    public function getNewsByUser($idUser)
+    public function getNewsByUser(int $idUser):array
     {
         $query = 'SELECT * FROM news WHERE auteur=:idUser';
         $this->con->executeQuery($query,array(':idUser'=>$idUser));
