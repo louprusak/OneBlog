@@ -1,7 +1,7 @@
 <?php
 
 
-class CtrlUser
+class CtrlUser extends CtrlVisitor
 {
     public function __construct()
     {
@@ -9,7 +9,20 @@ class CtrlUser
 
         try{
             switch(strtolower($action)){
-
+                case $action='addUser':
+                    $this->addUser();
+                    break;
+                case $action='isAdmin':
+                    $this->isAdmin();
+                    break;
+                case $action='checkConnection':
+                    $this->checkConnection();
+                    break;
+                case $action='checkLogin':
+                    $this->checkLogin();
+                    break;
+                default:
+                    require('../views/error.html');
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de données.';
@@ -27,25 +40,21 @@ class CtrlUser
         require('../views/connection.php');
     }
 
-    public function searchNews()
-    {
-        $mdl = new model.User;
-        $user = $mdl->getUser();
-        $user->getNewsByDate();
+    public function addUser(){
+        /*$mdl = new model.User;
+        $user = $mdl->getUser();*/
     }
 
-    public function addComment()
-    {
-        $mdl = new model.User;
-        $user = $mdl->getUser();
-        require('../views/addComment.php');
+    public function isAdmin(){
+
     }
 
-    public function deleteComment()
-    {
-        $mdl = new model.User;
-        $user = $mdl->getUser();
-        $user->deleteComment();
+    public function checkConnection(){
+
+    }
+
+    public function checkLogin(){
+
     }
 }
 
