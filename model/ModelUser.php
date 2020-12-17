@@ -9,7 +9,7 @@ class ModelUser
         $this->gateway=new GtwUser();
     }
 
-    public function inscription(string $login, string $password, bool $role){
+    public function register(string $login, string $password, bool $role){
         $this->gateway->addUser($login, $password, $role);
     }
 
@@ -50,5 +50,13 @@ class ModelUser
             return new User(1,$loginNettoyer,"",$roleNettoyer);
         }
         return null;
+    }
+
+    public function isAdmin() : bool
+    {
+        if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'){
+            return true;
+        }
+        return false;
     }
 }

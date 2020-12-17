@@ -3,7 +3,12 @@
 
 class CtrlVisitor
 {
-    public function __construct()
+    /**
+     * @var string|null
+     */
+    private $action;
+
+    public function __construct(?string $action)
     {
         $action = $_GET['action'] ?? null;
 
@@ -22,6 +27,9 @@ class CtrlVisitor
                 case $action='register':
                     $this->register();
 
+                case $action='connection';
+                    $this->connection();
+
                 default:
                     require('../views/error.html');
             }
@@ -32,34 +40,32 @@ class CtrlVisitor
             $erreur = 'Erreur lors de l\'éxécution du code du controller visiteur';
             require('/views/erro.php');
         }
+        $this->action = $action;
     }
 
     public function searchNews()
     {
-        require('/views/search.php');
-        /*echo 'coucou';*/
-        /*$mdl = new model.ModelUser;
-        $user = $mdl->getUser();
-        $user->getNewsByDate();*/
+        require('views/search.php');
     }
 
     public function addComment()
     {
-        /*$mdl = new model.User;
-        $user = $mdl->getUser();*/
-        require('../views/addComment.php');
+        require('views/addComment.php');
     }
 
     public function register()
     {
-        require('/views/inscription.php');
+        require('views/register.php');
     }
 
     public function displayNews()
     {
-        /*$mdlnews = new ModelNews();
-        $listNews = $mdlnews->getAllNews();*/
-        require('/views/index.html');
+        require('views/index.php');
+    }
+
+    private function connection()
+    {
+        require('views/connection.php');
     }
 }
 
