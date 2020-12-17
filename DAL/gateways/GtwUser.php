@@ -1,16 +1,17 @@
 <?php
 
+require_once('DAL/Connection.php');
 
 class GtwUser
 {
-    protected static $dsn='mysql:host=localhost;dbname=blog';
-    protected static $username='root';
-    protected static $password='';
-    private $con;
+    protected static string $dsn = 'mysql:host=localhost;dbname=blog';
+    protected static string $username = 'root';
+    protected static string $password = 'root';
+    private Connection $con;
 
     public function __construct(){
-        global $dsn, $username, $password;
-        $con = new Connection($dsn,$username,$password);
+
+        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
     }
 
     public function addUser(string $login, string $password, bool $role){
@@ -31,7 +32,7 @@ class GtwUser
             $query='SELECT password FROM user WHERE password = :password';
             $this->con->executeQuery($query, array(':password'=>$password));
             $results=$this->con->getResults();
-            if (strcmp($password,$results)) return true;
+            if (strcmp($password, (string)$results)) return true;
             return false;
         }
         return false;
@@ -41,7 +42,7 @@ class GtwUser
         $query='SELECT login FROM user WHERE login = :login';
         $this->con->executeQuery($query, array(':login'=>$login));
         $results=$this->con->getResults();
-        if (strcmp($login,$results)) return true;
+        if (strcmp($login, (string)$results)) return true;
         return false;
     }
 }

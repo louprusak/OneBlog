@@ -1,5 +1,6 @@
 <?php
 
+require_once('DAL/gateways/GtwUser.php');
 
 class ModelUser
 {

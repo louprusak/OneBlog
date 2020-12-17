@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluide">
+<div id="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="../views/index.php"><p>Mon Blog</p></a>
+            <a class="Titre"href="index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>

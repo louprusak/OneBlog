@@ -1,6 +1,9 @@
 <?php
 
+require_once('controllers/FrontController.php');
 
-new FrontController();
+session_start();
+
+new FrontController('displayNews');
 
 

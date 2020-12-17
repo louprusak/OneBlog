@@ -22,14 +22,14 @@ class CtrlUser extends CtrlVisitor
                     $this->checkLogin();
                     break;
                 default:
-                    require('../views/error.html');
+                    require('views/error.php');
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de données.';
-            require('../views/error.php');
+            require('views/error.php');
         }catch (Exception $e2){
             $erreur = 'Erreur lors de l\'éxécution du code du controller user';
-            require('../views/error.php');
+            require('views/error.php');
         }
     }
 

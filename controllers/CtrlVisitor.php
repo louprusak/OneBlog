@@ -3,44 +3,44 @@
 
 class CtrlVisitor
 {
-    /**
-     * @var string|null
-     */
-    private $action;
 
-    public function __construct(?string $action)
+    public function __construct($action)
     {
-        $action = $_GET['action'] ?? null;
+        //$action = $_GET['action'] ?? null;
 
         try{
             switch(strtolower($action)){
                 case null:
+                    $message = 'L\'action est nulle';
+                    require('views/error.php');
+                    break;
                 case $action='search':
                     $this->searchNews();
-
+                    break;
                 case $action='display':
                     $this->displayNews();
-
+                    break;
                 case $action='addComment':
                     $this->addComment();
-
+                    break;
                 case $action='register':
                     $this->register();
-
+                    break;
                 case $action='connection';
                     $this->connection();
-
+                    break;
                 default:
-                    require('../views/error.html');
+                    $message = 'Cette action n\'est pas disponible';
+                    require('views/error.php');
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de donnée.';
-            require('/views/error.php');
+            require('views/error.php');
         }catch (Exception $e2){
             $erreur = 'Erreur lors de l\'éxécution du code du controller visiteur';
-            require('/views/erro.php');
+            require('views/error.php');
         }
-        $this->action = $action;
+
     }
 
     public function searchNews()
@@ -53,11 +53,6 @@ class CtrlVisitor
         require('views/addComment.php');
     }
 
-    public function register()
-    {
-        require('views/register.php');
-    }
-
     public function displayNews()
     {
         require('views/index.php');
@@ -67,8 +62,13 @@ class CtrlVisitor
     {
         require('views/connection.php');
     }
+
+    public function register()
+    {
+        require('views/register.php');
+    }
 }
 
-new CtrlVisitor();
+
 
 ?>
