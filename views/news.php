@@ -36,7 +36,7 @@
 
     <div id="news-container">
         <div id="news" class="col-lg-12">
-            <h5 id="auteur-news">Posté par Loup RUSAK le 10 janvier 2020</h5>
+            <h5>Posté par Loup RUSAK le 10 janvier 2020</h5>
             <hr class="separateur">
             <br>
             <h1 id="titre-news">Titre de la News</h1>
@@ -65,24 +65,23 @@
                 ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
                 ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
             </p>
-            <a class="btn" href="addComment.php">Ajouter un commentaire</a>
+
         </div>
     </div>
 
     <div id="comment-container">
-        <div class="row">
-            <div id="index-news" class="col-lg-12">
-                <div id="index-news-contenu">
-                    <h6>'.$News->getAuteur().'le'. $News->getDate().'</h6>
-                    <hr id="hr2">
-                    <h2>'.$News->getTitre().'</h2>
-
-                    <p>'.$News->getDescription().'</p>
-                    <a href="news.php">Lire la suite</a>
+        <div id="comment">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5 id="titre-comment">Commentaires de la news</h5>
                 </div>
-
+                <div class="col-lg-3">
+                    <a class="btn" id="btn-add" href="addComment.php">Ajouter un commentaire</a>
+                </div>
             </div>
-        </div>';
+            <hr class="separateur">
+        </div>
+
         <?php
         if(isset($listComments)){
             foreach ($listComments as $Comment) {
@@ -90,12 +89,9 @@
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>'.$Comment->getAuteur().'le'. $Comment->getDate().'</h6>
+                                <h6>'.$Comment->getAuteur().'</h6>
                                 <hr class="hr-news">
-                                <h2>'.$Comment->getTitre().'</h2>
-
-                                <p>'.$Comment->getDescription().'</p>
-                                <a href="news.php">Lire la suite</a>
+                                <p>'.$Comment->getMessage().'</p>
                             </div>
 
                         </div>
@@ -103,11 +99,15 @@
             }
         }
         else{
-            echo "<h4 class='white'>Pas de commentaires à afficher ...</h4>";
+            echo "<br><br><br><h4 class='white'>Pas de commentaires à afficher ...</h4>";
         }
         ?>
 
     </div>
+
+    <br><br><br>
+
+</div>
 
 
 </div>

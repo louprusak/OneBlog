@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="titre"href="#"><p>Mon Blog</p></a>
+            <a class="titre"href="#"><img src="/res/images/logo one blog.png" height="500"/></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -25,7 +25,7 @@
                 <?php
                     if(isset($_SESSION['role'])){
                         if($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin'){
-                            echo "<a class=\"btn\" id=\"btn-add\" href=\"#\">Ajouter News</a>";
+                            echo "<a class=\"btn\" id=\"btn-add\" href=\"addNews.php\">Ajouter News</a>";
                         }
                     }
                 ?>
@@ -40,13 +40,16 @@
         <div class="col-lg-12">
             <a href="news.php">Exemple de lien menant vers la page complete d'une news</a><br>
             <a href="error.php">Exemple de lien menant vers la page d'erreur</a><br>
-            <a href="indexAdmin.php">Exemple de lien menant vers la page principale admin</a>
+            <a href="indexAdmin.php">Exemple de lien menant vers la page principale admin</a><br>
+            <a href="addNews.php">Exemple de lien menant vers la page d'ajout de news</a>
         </div>
     </div>
 
     <br><br><br><br><br>
 
     <div>
+
+        <img src="/res/images/logo one blog.png" height="100"/>
         <?php
             if(isset($listNews)){
                 foreach ($listNews as $News) {

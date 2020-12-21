@@ -27,6 +27,10 @@ div#entete{
 a.titre{
     font-size: 40px;
     text-align: center;
+    text-decoration: none;
+    text-shadow: 10px 0px 2px white;
+
+    color: darkred;
 }
 hr.hr-news{
     background-color: black;
@@ -123,8 +127,16 @@ textarea{
     padding-left: 15%;
     text-align: justify;
 }
-#auteur-news{
+#comment{
+    color: white;
+    margin-top: 3%;
+    padding-right: 15%;
+    padding-left: 15%;
+    text-align: center;
 
+}
+#titre-comment{
+    margin-top: 15px;
 }
 
 
