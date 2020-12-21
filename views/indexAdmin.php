@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="titre"href="#"><p>Dom Blog</p></a>
+            <a class="titre"href="#"><img src="../res/images/logo_oneblog_grandtxt.png" height="60"/></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>

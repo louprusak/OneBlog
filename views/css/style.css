@@ -2,7 +2,7 @@
 
 [class*="col-"], footer{
 
-    /*border: 2px solid green;
+   /* border: 2px solid green;
     border-radius: 6px;*/
 
     line-height: 40px;
@@ -13,12 +13,19 @@
     margin: 0;
 }
 body{
-    /*background: url("/res/images/fond2.jpg") fixed;*/
-    background-color: #343a40;
+    padding: 0;
     margin: 0;
+
+    background: url("../../res/images/fond_sombre.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    /*background-color: #343a40;*/
 }
 header{
     background-color: darkorange;
+
+
 }
 div#entete{
     padding-top: 10px;
@@ -46,10 +53,14 @@ h4.white{
     color: white;
     text-align: center;
 }
+img{
+    margin-bottom: 10px;
+}
 
 /* BOUTONS */
 
 .btn{
+    line-height: 40px;
     border: 2px solid white;
     border-radius: 30px;
     margin: 10px;

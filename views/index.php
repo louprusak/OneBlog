@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Blog</title>
     <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet"/>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -12,10 +13,13 @@
 </head>
 
 <body>
+
+
+
 <div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="titre"href="#"><img src="logo_oneblog_petit.png"></a>
+            <a class="titre" href="#"><img src="../res/images/logo_oneblog_grandtxt.png" height="60"/></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -23,11 +27,11 @@
                 <a class="btn" href="connection.php">Admin</a>
                 <a class="btn" href="search.php">Rechercher</a>
                 <?php
-                    if(isset($_SESSION['role'])){
-                        if($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin'){
-                            echo "<a class=\"btn\" id=\"btn-add\" href=\"addNews.php\">Ajouter News</a>";
-                        }
+                if (isset($_SESSION['role'])) {
+                    if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
+                        echo "<a class=\"btn\" id=\"btn-add\" href=\"addNews.php\">Ajouter News</a>";
                     }
+                }
                 ?>
             </nav>
         </div>
@@ -49,34 +53,34 @@
 
     <div>
 
-        <img src="/res/images/logo one blog.png"/>
+
         <?php
-            if(isset($listNews)){
-                foreach ($listNews as $News) {
-                    echo '
+        if (isset($listNews)) {
+            foreach ($listNews as $News) {
+                echo '
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>'.$News->getAuteur().'le'. $News->getDate().'</h6>
+                                <h6>' . $News->getAuteur() . 'le' . $News->getDate() . '</h6>
                                 <hr class="hr-news">
-                                <h2>'.$News->getTitre().'</h2>
+                                <h2>' . $News->getTitre() . '</h2>
 
-                                <p>'.$News->getDescription().'</p>
+                                <p>' . $News->getDescription() . '</p>
                                 <a href="news.php">Lire la suite</a>
                             </div>
 
                         </div>
                     </div>';
-                }
             }
-            else{
-                echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";
-            }
+        } else {
+            echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";
+        }
         ?>
     </div>
 
 
 </div>
+
 </body>
 </html>
 
