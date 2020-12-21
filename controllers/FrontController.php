@@ -7,9 +7,9 @@ require_once('controllers/CtrlAdmin.php');
 
 class FrontController
 {
-    public function __construct($action)
+    public function __construct()
     {
-        //$action  = strtolower($_REQUEST['action']) ?? null;
+        $action  = strtolower($_REQUEST['action']) ?? null;
         $mdl  = new ModelUser();
 
         $admin = $mdl->getUser();

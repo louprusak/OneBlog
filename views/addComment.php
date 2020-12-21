@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluid">
+<div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="index.php"><p>Mon Blog</p></a>
+            <a class="titre"href="index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -32,7 +32,7 @@
     <div class="row">
         <div id="ajoutcommentaire" class="col-xs-12 col-md-12 col-lg-12">
             <h1 id="titre-ajoutcommentaire">Ajouter un commentaire</h1>
-            <hr id="separateur">
+            <hr class="separateur">
             <br>
             <h5 id="auteur-news">Veuillez saisir les informations suivantes pour poster votre commentaire :</h5>
             <br>
@@ -45,7 +45,7 @@
                 <br>
                 <textarea name="commentaire" cols="80%" rows="7" re id="commentaire"></textarea>
                 <br><br>
-                <input type="submit" value="Envoyer le commentaire"/>
+                <input class="btn-valid" type="submit" value="Envoyer le commentaire"/>
                 <br><br><br>
             </form>
         </div>

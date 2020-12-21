@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluid">
+<div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="index.php"><p>Mon Blog</p></a>
+            <a class="titre"href="index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -37,7 +37,7 @@
     <div id="erreur-container" class="row">
         <div id="erreur" class="col-lg-12">
             <h1 id="titre-erreur">Oh oh ! Il y a eu un petit soucis !</h1>
-            <hr id="separateur">
+            <hr class="separateur">
             <br>
             <h5 id="auteur-news">Ceci est la description détaillée de l'erreur engendrée.
                 Ceci est la description détaillée de l'erreur engendrée.

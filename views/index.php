@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluid">
+<div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="#"><p>Mon Blog</p></a>
+            <a class="titre"href="#"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -25,7 +25,7 @@
                 <?php
                     if(isset($_SESSION['role'])){
                         if($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin'){
-                            echo "<a class=\"btn\" id=\"btn-supp\" href=\"#\">Ajouter News</a>";
+                            echo "<a class=\"btn\" id=\"btn-add\" href=\"#\">Ajouter News</a>";
                         }
                     }
                 ?>
@@ -55,7 +55,7 @@
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
                                 <h6>'.$News->getAuteur().'le'. $News->getDate().'</h6>
-                                <hr id="hr2">
+                                <hr class="hr-news">
                                 <h2>'.$News->getTitre().'</h2>
 
                                 <p>'.$News->getDescription().'</p>
@@ -67,7 +67,7 @@
                 }
             }
             else{
-                echo "<h4 id='white'>Pas de news à afficher ...</h4>";
+                echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";
             }
         ?>
     </div>

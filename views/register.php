@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluid">
+<div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre" href="index.php"><p>Mon Blog</p></a>
+            <a class="titre" href="index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -36,8 +36,8 @@
 
     <div id="connexion-container" class="row">
         <div id="connexion" class="col-lg-12">
-            <h1>Connexion</h1>
-            <hr id="separateur">
+            <h1>Inscription</h1>
+            <hr class="separateur">
             <br>
             <h5>Veuillez entrer un login et un mot de passe pour vous inscrire :</h5>
             <br>
@@ -50,8 +50,10 @@
                 <br>
                 <input type="text" name="mdp" id="mdp">
                 <br><br><br>
-                <input type="submit" value="S'inscrire">
-                <br><br><br>
+                <input class="btn-valid" type="submit" value="S'inscrire">
+                <br><br>
+                <p>Vous êtes déjà inscrit sur le site ? Pas de problème ! <a href="connection.php">Cliquez pour vous connecter</a></p>
+                <br>
             </form>
         </div>
     </div>

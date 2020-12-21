@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<div id="container-fluide">
+<div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="Titre"href="index.php"><p>Mon Blog</p></a>
+            <a class="titre"href="index.php"><p>Mon Blog</p></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -37,7 +37,7 @@
     <div id="news-container">
         <div id="news" class="col-lg-12">
             <h5 id="auteur-news">Posté par Loup RUSAK le 10 janvier 2020</h5>
-            <hr id="separateur">
+            <hr class="separateur">
             <br>
             <h1 id="titre-news">Titre de la News</h1>
             <br>
@@ -84,17 +84,17 @@
             </div>
         </div>';
         <?php
-        if(isset($listNews)){
-            foreach ($listNews as $News) {
+        if(isset($listComments)){
+            foreach ($listComments as $Comment) {
                 echo '
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>'.$News->getAuteur().'le'. $News->getDate().'</h6>
-                                <hr id="hr2">
-                                <h2>'.$News->getTitre().'</h2>
+                                <h6>'.$Comment->getAuteur().'le'. $Comment->getDate().'</h6>
+                                <hr class="hr-news">
+                                <h2>'.$Comment->getTitre().'</h2>
 
-                                <p>'.$News->getDescription().'</p>
+                                <p>'.$Comment->getDescription().'</p>
                                 <a href="news.php">Lire la suite</a>
                             </div>
 
@@ -103,7 +103,7 @@
             }
         }
         else{
-            echo "<h4 id='white'>Pas de news à afficher ...</h4>";
+            echo "<h4 class='white'>Pas de commentaires à afficher ...</h4>";
         }
         ?>
 
