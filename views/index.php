@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="titre"href="#"><img src="/res/images/logo one blog.png" height="500"/></a>
+            <a class="titre"href="#"><img src="logo_oneblog_petit.png"></a>
         </div>
         <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
             <nav>
@@ -49,7 +49,7 @@
 
     <div>
 
-        <img src="/res/images/logo one blog.png" height="100"/>
+        <img src="/res/images/logo one blog.png"/>
         <?php
             if(isset($listNews)){
                 foreach ($listNews as $News) {
