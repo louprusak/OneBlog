@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div id="container-fluide">
+<div id="container-fluid">
     <header class="row">
         <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
             <a class="Titre"href="index.php"><p>Mon Blog</p></a>
@@ -43,9 +43,10 @@
                 <br>
                 <label for="commentaire">Votre Commentaire :</label>
                 <br>
-                <textarea name="commentaire" cols="120" rows="7" re id="commentaire"></textarea>
+                <textarea name="commentaire" cols="80%" rows="7" re id="commentaire"></textarea>
                 <br><br>
                 <input type="submit" value="Envoyer le commentaire"/>
+                <br><br><br>
             </form>
         </div>
     </div>

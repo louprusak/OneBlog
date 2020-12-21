@@ -22,6 +22,13 @@
                 <a class="btn" href="addComment.php">Commentaire</a>
                 <a class="btn" href="connection.php">Admin</a>
                 <a class="btn" href="search.php">Rechercher</a>
+                <?php
+                    if(isset($_SESSION['role'])){
+                        if($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin'){
+                            echo "<a class=\"btn\" id=\"btn-supp\" href=\"#\">Ajouter News</a>";
+                        }
+                    }
+                ?>
             </nav>
         </div>
 
@@ -41,9 +48,6 @@
 
     <div>
         <?php
-
-
-
             if(isset($listNews)){
                 foreach ($listNews as $News) {
                     echo '
@@ -61,6 +65,9 @@
                         </div>
                     </div>';
                 }
+            }
+            else{
+                echo "<h4 id='white'>Pas de news à afficher ...</h4>";
             }
         ?>
     </div>

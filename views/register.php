@@ -51,6 +51,7 @@
                 <input type="text" name="mdp" id="mdp">
                 <br><br><br>
                 <input type="submit" value="S'inscrire">
+                <br><br><br>
             </form>
         </div>
     </div>
