@@ -4,20 +4,21 @@
 class CtrlVisitor
 {
 
-    public function __construct($action)
+    public function __construct()
     {
-        //$action = $_GET['action'] ?? null;
+        $action = $_GET['action'] ?? null;
+
 
         try{
             switch(strtolower($action)){
                 case null:
-                    $message = 'L\'action est nulle';
-                    require('views/error.php');
+                    /*$message = 'L\'action est nulle';
+                    require('views/error.php');*/
                     break;
-                case $action='search':
+                case 'search':
                     $this->searchNews();
                     break;
-                case $action='display':
+                case 'display':
                     $this->displayNews();
                     break;
                 case $action='addComment':
@@ -55,6 +56,8 @@ class CtrlVisitor
 
     public function displayNews()
     {
+        $mdl = new ModelNews();
+        $_SESSION['listNews'] = $mdl->getAllNews();
         require('views/index.php');
     }
 

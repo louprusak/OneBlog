@@ -1,9 +1,9 @@
 <?php
 
-require_once('controllers/FrontController.php');
-
 session_start();
 
-new FrontController();
+require_once('controllers/FrontController.php');
+
+new FrontController('display');
 
 

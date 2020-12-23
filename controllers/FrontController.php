@@ -34,4 +34,8 @@ class FrontController
             new CtrlVisitor($action);
         }
     }
+
+
 }
+
+new FrontController();
