@@ -11,7 +11,6 @@ class GtwNews
 
     protected static string $password = 'root';
 
-
     private $tabAllNews;
 
     private $tabNewsByDate;
@@ -46,7 +45,8 @@ class GtwNews
     public function getAllNews():array
     {
         $query = 'SELECT * FROM news ORDER BY desc date';
-        $this->con->executeQuery($query);
+        $params = array();
+        $this->con->executeQuery($query,$params);
         $results = $this->con->getResults();
         foreach ($results as $row){
             $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);

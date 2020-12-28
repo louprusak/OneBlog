@@ -14,28 +14,9 @@
 
 
 <div class="container-fluid">
-    <header class="row">
-        <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-            <a class="titre" href="#"><img src="../res/images/logo_oneblog_grandtxt.png" height="60"/></a>
-        </div>
-        <div id="menu" class="col-xs-12 col-sm-12 col-lg-7">
-            <nav>
-                <a class="btn" href="addComment.php">Commentaire</a>
-                <a class="btn" href="connection.php">Admin</a>
-                <a class="btn" href="search.php">Rechercher</a>
-                <?php
-                if (isset($_SESSION['role'])) {
-                    if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
-                        echo "<a class=\"btn\" id=\"btn-add\" href=\"addNews.php\">Ajouter News</a>";
-                    }
-                }
-                ?>
-            </nav>
-        </div>
-
-        <p class="col-xs-6 col-md-6 col-lg-1">Compteur 1</p>
-        <p class="col-xs-6 col-md-6 col-lg-1">Compteur 2</p>
-    </header>
+    <?php
+    require('header.php');
+    ?>
 
     <div class="row">
         <div class="col-lg-12">
