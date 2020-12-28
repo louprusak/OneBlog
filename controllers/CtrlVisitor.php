@@ -1,6 +1,10 @@
 <?php
 
 
+
+require_once ('model/ModelNews.php');
+require_once ('model/ModelUser.php');
+
 class CtrlVisitor
 {
 
@@ -31,8 +35,9 @@ class CtrlVisitor
                     $this->connection();
                     break;
                 default:
-                    $message = 'Cette action n\'est pas disponible';
-                    require('views/error.php');
+                    //$message = 'Cette action n\'est pas disponible';
+                    $this->displayNews();
+
             }
         }catch (PDOException $e){
             $erreur = 'Erreur lors de la connexion à la base de donnée.';
@@ -57,7 +62,7 @@ class CtrlVisitor
     public function displayNews()
     {
         $mdl = new ModelNews();
-        $_SESSION['listNews'] = $mdl->getAllNews();
+        $listNews = $mdl->getAllNews();
         require('views/index.php');
     }
 

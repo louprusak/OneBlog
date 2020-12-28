@@ -1,16 +1,15 @@
 <?php
 
 
-
 class GtwNews
 {
     private $con;
 
-    protected static $dsn = 'mysql:host=localhost;dbname=blog';
+    protected static string $dsn = 'mysql:host=localhost;dbname=blog';
 
-    protected static $username = 'root';
+    protected static string $username = 'root';
 
-    protected static $password = 'root';
+    protected static string $password = 'root';
 
 
     private $tabAllNews;
@@ -20,10 +19,11 @@ class GtwNews
     private $tabNewsByUser;
 
 
+
     public function __construct()
     {
-        global $dsn,$username,$password;
-        $con = new Connection($dsn,$username,$password);
+        //global $dsn,$username,$password;
+        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
         $this->tabAllNews = array();
         $this->tabNewsByDate = array();
         $this->tabNewsByUser = array();
@@ -45,7 +45,7 @@ class GtwNews
     public function getAllNews():array
     {
         $query = 'SELECT * FROM news ORDER BY desc date';
-        $this->con->executeQuery($query,null);
+        $this->con->executeQuery($query);
         $results = $this->con->getResults();
         foreach ($results as $row){
             $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);

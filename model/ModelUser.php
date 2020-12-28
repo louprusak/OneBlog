@@ -1,10 +1,11 @@
 <?php
 
 require_once('DAL/gateways/GtwUser.php');
+require_once('DAL/gateways/GtwNews.php');
 
 class ModelUser
 {
-    private $gateway;
+    private GtwUser $gateway;
 
     public function __construct(){
         $this->gateway=new GtwUser();

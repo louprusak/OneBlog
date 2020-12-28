@@ -1,5 +1,6 @@
 <?php
 
+
 class ModelNews
 {
     private $gateway;

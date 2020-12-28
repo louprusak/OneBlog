@@ -16,7 +16,7 @@ body{
     padding: 0;
     margin: 0;
 
-    background: url("../../res/images/fond_sombre.jpg") no-repeat center fixed;
+    background: url("../res/images/fond_sombre.jpg") no-repeat center fixed;
     -webkit-background-size: cover;
     background-size: cover;
 

@@ -1,15 +1,23 @@
 <?php
 
-require_once('model/ModelUser.php');
+
+require_once ('model/ModelUser.php');
 require_once('controllers/CtrlVisitor.php');
 require_once('controllers/CtrlUser.php');
 require_once('controllers/CtrlAdmin.php');
+
 
 class FrontController
 {
     public function __construct()
     {
-        $action  = strtolower($_REQUEST['action']) ?? null;
+        if(isset($_REQUEST['action'])){
+            $action  = strtolower($_REQUEST['action']) ?? null;
+        }
+        else{
+            $action = null;
+        }
+
         $mdl  = new ModelUser();
 
         $admin = $mdl->getUser();
@@ -31,7 +39,7 @@ class FrontController
                 new CtrlAdmin($action);
             }
         }else{
-            new CtrlVisitor($action);
+            new CtrlVisitor();
         }
     }
 
