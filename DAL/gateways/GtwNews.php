@@ -45,13 +45,9 @@ class GtwNews
 
     public function getAllNews():array
     {
-        echo 'fonction getallnews de la gateway<br>';
         $query = 'SELECT * FROM news ORDER BY desc date';
-        echo 'query ok';
         $this->con->executeQuery($query);
-        echo 'execute query ok';
         $results = $this->con->getResults();
-        echo 'getresults ok';
         foreach ($results as $row){
             $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);
         }

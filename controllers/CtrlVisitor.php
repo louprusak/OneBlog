@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once ('model/ModelNews.php');
 require_once ('model/ModelUser.php');
 
@@ -59,7 +57,6 @@ class CtrlVisitor
 
     public function displayNews()
     {
-        echo 'Fonction display news du controlleur visiteur<br>';
         $mdl = new ModelNews();
         $listNews = $mdl->getAllNews();
         require('views/index.php');
