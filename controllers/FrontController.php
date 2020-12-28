@@ -15,6 +15,7 @@ class FrontController
             $action  = strtolower($_REQUEST['action']) ?? null;
         }
         else{
+            echo "action frontcontroller null<br>";
             $action = null;
         }
 
@@ -32,13 +33,16 @@ class FrontController
             }else{
                 new CtrlUser($action);
             }
-        }else if(in_array($action, $listActionsAdmin)){
+        }
+        else if(in_array($action, $listActionsAdmin)){
             if($admin->getRole() == null or 0){
                 new CtrlVisitor('connection');
             }else if($admin->getRole() === 1){
                 new CtrlAdmin($action);
             }
-        }else{
+        }
+        else{
+            echo "pas dans la liste des actions; création d'un controlleur visiteur<br>";
             new CtrlVisitor();
         }
     }

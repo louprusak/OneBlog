@@ -15,10 +15,6 @@ class CtrlVisitor
 
         try{
             switch(strtolower($action)){
-                case null:
-                    /*$message = 'L\'action est nulle';
-                    require('views/error.php');*/
-                    break;
                 case 'search':
                     $this->searchNews();
                     break;
@@ -34,16 +30,18 @@ class CtrlVisitor
                 case 'connection';
                     $this->connection();
                     break;
+                case null:
                 default:
+                    echo "affichage des news car action nulle<br>";
                     //$message = 'Cette action n\'est pas disponible';
                     $this->displayNews();
 
             }
         }catch (PDOException $e){
-            $erreur = 'Erreur lors de la connexion à la base de donnée.';
+            $error = 'Erreur lors de la connexion à la base de données.';
             require('views/error.php');
         }catch (Exception $e2){
-            $erreur = 'Erreur lors de l\'éxécution du code du controller visiteur';
+            $error= 'Erreur lors de l\'éxécution du code du controller visiteur';
             require('views/error.php');
         }
 
@@ -61,6 +59,7 @@ class CtrlVisitor
 
     public function displayNews()
     {
+        echo 'Fonction display news du controlleur visiteur<br>';
         $mdl = new ModelNews();
         $listNews = $mdl->getAllNews();
         require('views/index.php');

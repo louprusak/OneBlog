@@ -37,11 +37,15 @@
             <h1 id="titre-erreur">Oh oh ! Il y a eu un petit soucis !</h1>
             <hr class="separateur">
             <br>
-            <h5 id="auteur-news">Ceci est la description détaillée de l'erreur engendrée.
-                Ceci est la description détaillée de l'erreur engendrée.
-                Ceci est la description détaillée de l'erreur engendrée.
-                Ceci est la description détaillée de l'erreur engendrée.
-                Ceci est la description détaillée de l'erreur engendrée.:</h5>
+            <?php
+            if(isset($error)){
+                echo "<h5 id=\"auteur-news\">".$error."</h5>";
+            }
+            else{
+                echo "Pas de message d'erreur spécifique à afficher !";
+            }
+            ?>
+
         </div>
     </div>
 

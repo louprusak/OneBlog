@@ -22,6 +22,7 @@ class ModelNews
 
     public function getAllNews()
     {
+        echo 'fonction getallnews du model news<br>';
         return $this->gateway->getAllNews();
     }
 
