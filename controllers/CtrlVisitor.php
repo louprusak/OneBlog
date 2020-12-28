@@ -25,13 +25,13 @@ class CtrlVisitor
                 case 'display':
                     $this->displayNews();
                     break;
-                case $action='addComment':
+                case 'addComment':
                     $this->addComment();
                     break;
-                case $action='register':
+                case 'register':
                     $this->register();
                     break;
-                case $action='connection';
+                case 'connection';
                     $this->connection();
                     break;
                 default:
