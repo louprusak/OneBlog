@@ -24,6 +24,7 @@ class GtwNews
     {
         //global $dsn,$username,$password;
         $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
+        echo 'construction instance classe connection ok';
         $this->tabAllNews = array();
         $this->tabNewsByDate = array();
         $this->tabNewsByUser = array();
@@ -46,8 +47,11 @@ class GtwNews
     {
         echo 'fonction getallnews de la gateway<br>';
         $query = 'SELECT * FROM news ORDER BY desc date';
+        echo 'query ok';
         $this->con->executeQuery($query);
+        echo 'execute query ok';
         $results = $this->con->getResults();
+        echo 'getresults ok';
         foreach ($results as $row){
             $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);
         }
