@@ -39,7 +39,7 @@
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>' . $News->getAuteur() . 'le' . $News->getDate() . '</h6>
+                                <h6>' . $News->getAuteur() . ' le ' . $News->getDate() . '</h6>
                                 <hr class="hr-news">
                                 <h2>' . $News->getTitre() . '</h2>
 
@@ -49,8 +49,9 @@
 
                         </div>
                     </div>';
+                echo '<br><br><br>';
             }
-        } else {
+        }else {
             echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";
         }
         ?>

@@ -24,13 +24,9 @@ class Connection extends PDO {
 
     public function executeQuery(string $query, array $parameters = []) : bool{
         $this->stmt = parent::prepare($query);
-        echo "prepare query ok";
         foreach ($parameters as $name => $value) {
-            echo 'before bindvalue ok';
             $this->stmt->bindValue($name, $value[0], $value[1]);
-            echo 'post bindvalue ok';
         }
-        echo 'foreach ok';
         return $this->stmt->execute();
     }
 

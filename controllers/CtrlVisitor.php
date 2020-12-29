@@ -39,12 +39,12 @@ class CtrlVisitor
                     $this->displayNews();
 
             }
-        /*}catch (PDOException $e){
+        }catch (PDOException $e){
             $error = 'Erreur lors de la connexion à la base de données.';
-            require('views/error.php');*/
+            require_once('views/error.php');
         }catch (Exception $e2){
             $error= 'Erreur lors de l\'éxécution du code du controller visiteur';
-            require('views/error.php');
+            require_once('views/error.php');
         }
 
     }
@@ -54,11 +54,11 @@ class CtrlVisitor
      */
     public function searchNews()
     {
-        require('views/search.php');
+        require_once('views/search.php');
         $mdl = new ModelNews();
         $date = $_GET['date'];
         $listNewsSearch = $mdl->getNewsByDate($date);
-        require ('views/searchResult.php');
+        require_once ('views/searchResult.php');
     }
 
     /**
@@ -66,7 +66,7 @@ class CtrlVisitor
      */
     public function addComment()
     {
-        require('views/addComment.php');
+        require_once('views/addComment.php');
         $mdl = new ModelComment();
         $comment = $_GET['comment'];
         $pseudo = $_GET['pseudo'];
@@ -80,7 +80,7 @@ class CtrlVisitor
     {
         $mdl = new ModelNews();
         $listNews = $mdl->getAllNews();
-        require('views/index.php');
+        require_once('views/index.php');
     }
 
     /**
@@ -88,15 +88,15 @@ class CtrlVisitor
      */
     private function connection()
     {
-        require('views/connection.php');
+        require_once('views/connection.php');
         $mdl = new ModelUser();
         $login = $_GET['login'];
         $password = $_GET['password'];
         if(!$mdl->connection($login, $password)){
             $error = 'Login ou mot de passe inconnu, veuillez réessayer !';
-            require ('views/error.php');
+            require_once ('views/error.php');
         }else{
-            require ('views/index.php');
+            require_once ('views/index.php');
         }
     }
 
@@ -105,7 +105,7 @@ class CtrlVisitor
      */
     public function register()
     {
-        require('views/register.php');
+        require_once('views/register.php');
         $mdl = new ModelUser();
         $login = $_GET['login'];
         $password = $_GET['password'];
@@ -113,10 +113,10 @@ class CtrlVisitor
             $mdl->register($login,$password);
         }catch (PDOException $e){
             $error = 'Login invalide, veuillez en entrer un nouveau svp.';
-            require ('views/error.php');
+            require_once ('views/error.php');
         }
         $mdl->connection($login,$password);
-        require ('views/index.php');
+        require_once ('views/index.php');
     }
 }
 

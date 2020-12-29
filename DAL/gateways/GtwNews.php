@@ -1,5 +1,7 @@
 <?php
 
+require ('model/metiers/News.php');
+
 /**
  * Class GtwNews
  */
@@ -70,7 +72,7 @@ class GtwNews
         $this->con->executeQuery($query,$params);
         $results = $this->con->getResults();
         foreach ($results as $row){
-            $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);
+            $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['lien'],$row['auteur']);
         }
         return $this->tabAllNews;
     }
