@@ -6,9 +6,14 @@ require_once('controllers/CtrlVisitor.php');
 require_once('controllers/CtrlUser.php');
 require_once('controllers/CtrlAdmin.php');
 
-
+/**
+ * Class FrontController
+ */
 class FrontController
 {
+    /**
+     * FrontController constructor.
+     */
     public function __construct()
     {
         if(isset($_REQUEST['action'])){

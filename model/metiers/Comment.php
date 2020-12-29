@@ -11,6 +11,13 @@ class Comment
 
     private $message;
 
+    /**
+     * Comment constructor.
+     * @param int $idComment
+     * @param int $idNews
+     * @param string $auteur
+     * @param string $message
+     */
     function __construct($idComment,$idNews,$auteur,$message)
     {
         $this->idComment = $idComment;

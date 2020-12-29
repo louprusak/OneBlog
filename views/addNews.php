@@ -29,7 +29,7 @@
                 <br>
                 <label for="contenu">Contenu de votre news :</label>
                 <br>
-                <textarea name="contenu" cols="150%" rows="15" id="contenu"></textarea>
+                <textarea name="contenu" cols="100%" rows="15" id="contenu"></textarea>
                 <br><br>
                 <input class="btn-valid" type="submit" value="Créer et poster la news"/>
                 <br><br><br>
