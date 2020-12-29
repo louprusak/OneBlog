@@ -1,20 +1,20 @@
 <header class="row">
     <div id="entete" class="col-xs-12 col-sm-12 col-lg-3">
-        <a class="titre" href="index.php"><img src="../res/images/logo_oneblog_grandtxt.png" height="60"/></a>
+        <a class="titre" href="index.php"><img src="/res/images/logo_oneblog_grandtxt.png" height="60"/></a>
     </div>
     <div id="menu" class="col-xs-12 col-sm-12 col-lg-5">
         <nav>
-            <a class="btn" href="search.php">Rechercher</a>
+            <a class="btn" href="/views/search.php">Rechercher</a>
 
             <?php
             if (!isset($_SESSION['role'])) {
                 //if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
-                    echo "<a class=\"btn\" id=\"btn-add\" href=\"addNews.php\">Ajouter News</a>";
-                    echo "<a class=\"btn\" id=\"btn-add\" href=\"controllers/FrontController.php?action=deconnection\">Se déconnecter</a>";
+                    echo "<a class=\"btn\" id=\"btn-add\" href=\"/views/addNews.php\">Ajouter News</a>";
+                    echo "<a class=\"btn\" id=\"btn-add\" href=\"/controllers/FrontController.php?action=deconnection\">Se déconnecter</a>";
                 //}
             }
             else{
-                echo "<a class=\"btn\" href=\"connection.php\">Se connecter</a>";
+                echo "<a class=\"btn\" href=\"/views/connection.php\">Se connecter</a>";
             }
             ?>
         </nav>
