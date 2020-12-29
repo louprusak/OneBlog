@@ -21,6 +21,8 @@
     </div>
 
     <?php
+        // A FAIRE MARCHER !
+
         //require_once ('DAL/gateways/GtwComment.php');
         //$gtwcom = new GtwComment();
         //$nbcom = $gtwcom->getNbComment();

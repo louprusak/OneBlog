@@ -20,7 +20,6 @@ class FrontController
             $action  = strtolower($_REQUEST['action']) ?? null;
         }
         else{
-            echo "action frontcontroller null<br>";
             $action = null;
         }
 
@@ -47,8 +46,7 @@ class FrontController
             }
         }
         else{
-            echo "pas dans la liste des actions; création d'un controlleur visiteur<br>";
-            new CtrlVisitor();
+            new CtrlVisitor(null);
         }
     }
 

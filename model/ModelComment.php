@@ -22,10 +22,10 @@ class ModelComment
     }
 
     public function getNbCommentByNews($idNews){
-        return$this->gateway->getNbCommentByNews($idNews);
+        return $this->gateway->getNbCommentByNews($idNews);
     }
 
     public function getNbCommentByUser($idUser){
-        return$this->gateway->getNbCommentByUser($idUser);
+        return $this->gateway->getNbCommentByUser($idUser);
     }
 }

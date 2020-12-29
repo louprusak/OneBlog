@@ -1,61 +1,80 @@
 <?php
 
-
-class CtrlUser extends CtrlVisitor
+/**
+ * Class CtrlUser
+ */
+class CtrlUser
 {
-    public function __construct()
+    /**
+     * CtrlUser constructor.
+     * @param $action
+     */
+    public function __construct($action)
     {
-        $action = $_GET['action'] ?? null;
+        //$action = $_GET['action'] ?? null;
 
         try{
             switch(strtolower($action)){
-                case $action='addUser':
-                    $this->addUser();
+                case $action='deconnection':
+                    $this->deconnection();
                     break;
-                case $action='isAdmin':
-                    $this->isAdmin();
+                case $action='addNews':
+                    $this->addNews();
                     break;
-                case $action='checkConnection':
-                    $this->checkConnection();
+                case $action='deleteMyNews':
+                    $this->deleteMyNews();
                     break;
-                case $action='checkLogin':
-                    $this->checkLogin();
-                    break;
+                case null:
                 default:
+                    $error = 'erreur dans le controlleur user';
                     require('views/error.php');
             }
         }catch (PDOException $e){
-            $erreur = 'Erreur lors de la connexion à la base de données.';
+            $error = 'Erreur lors de la connexion à la base de données.';
             require('views/error.php');
         }catch (Exception $e2){
-            $erreur = 'Erreur lors de l\'éxécution du code du controller user';
+            $error = 'Erreur lors de l\'éxécution du code du controller user';
             require('views/error.php');
         }
     }
 
-    public function connection()
+    /**
+     * Fonction de deconnection du controlleur user.
+     */
+    public function deconnection()
     {
-        $mdl = new model.User;
-        $user = $mdl->getUser();
-        require('../views/connection.php');
+        $mdl = new ModelUser();
+        $mdl->deconnection();
+        require('views/index.php');
     }
 
-    public function addUser(){
-        /*$mdl = new model.User;
-        $user = $mdl->getUser();*/
+    /**
+     * Fonction d'ajout de news du controlleur user.
+     */
+    public function addNews(){
+        require('views/addNews.php');
+        $mdl = new ModelNews();
+        $auteur = $_SESSION['login'];
+        $content = $_GET['content'];
+        $title= $_GET['title'];
+        try {
+            $mdl->addNews($title,$content,$auteur);
+        }catch (Exception $e){
+            $error = 'Erreur lors de l\'ajout d\'une nouvelle news.';
+            require ('views/error.php');
+        }
+        require('views/index.php');
     }
 
-    public function isAdmin(){
-
+    /**
+     * Fonction de suppression des news d'un utilisateur normale du controlleur user.
+     */
+    public function deleteMyNews(){
+        $mdl = new ModelNews();
+        $mdl->deleteNews(0);// A TROUVER COMMENT RECUP ID NEWS DE CELLE SELECTIONNEE
+        require ('views/index.php');
     }
 
-    public function checkConnection(){
-
-    }
-
-    public function checkLogin(){
-
-    }
 }
 
 ?>
