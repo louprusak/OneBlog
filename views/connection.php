@@ -23,7 +23,7 @@
             <br>
             <h5>Veuillez entrer votre login et votre mot de passe pour vous connecter :</h5>
             <br>
-            <form>
+            <form action="index.php?action=connection">
                 <label for="login">Login</label>
                 <br>
                 <input type="text" name="login" id="login">
@@ -34,7 +34,7 @@
                 <br><br><br>
                 <input class="btn-valid" type="submit" value="Se connecter">
                 <br><br>
-                <p>Vous n'êtes pas inscrit sur le site ? Pas de problème ! <a href="register.php">Cliquez pour commencer l'inscription</a></p>
+                <p>Vous n'êtes pas inscrit sur le site ? Pas de problème ! <a href="index.php?action=register">Cliquez pour commencer l'inscription</a></p>
                 <br>
             </form>
         </div>

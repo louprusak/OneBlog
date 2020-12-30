@@ -18,7 +18,7 @@
     require('header.php');
     ?>
 
-    <div class="row">
+    <!--<div class="row">
         <div class="col-lg-12">
             <a href="news.php">Exemple de lien menant vers la page complete d'une news</a><br>
             <a href="error.php">Exemple de lien menant vers la page d'erreur</a><br>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <br><br><br><br><br>
+    <br><br><br><br><br>-->
 
     <div>
 
@@ -43,13 +43,13 @@
                                 <hr class="hr-news">
                                 <h2>' . $News->getTitre() . '</h2>
 
-                                <p>' . $News->getDescription() . '</p>
+                                <p>' . substr($News->getDescription(),0,500) . '... </p>
                                 <a href="news.php">Lire la suite</a>
                             </div>
 
                         </div>
                     </div>';
-                echo '<br><br><br>';
+
             }
         }else {
             echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";

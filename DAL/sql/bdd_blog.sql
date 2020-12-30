@@ -23,9 +23,8 @@ INSERT INTO `user`(`login`, `password`, `role`) VALUES ("admin","admin",1);
 CREATE TABLE IF NOT EXISTS `news` (
   `idNews` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id de la news',
   `date` date NOT NULL COMMENT 'date d''ajout de la news',
-  `titre` varchar(100) NOT NULL COMMENT 'titre de la news',
+  `titre` varchar(400) NOT NULL COMMENT 'titre de la news',
   `description` text NOT NULL COMMENT 'description de la news',
-  `lien` varchar(100) NOT NULL COMMENT 'lien vers la news',
   `auteur` int(11) NOT NULL COMMENT 'Auteur de la news',
   PRIMARY KEY (`idnews`),
   UNIQUE KEY `UNIQUE_TITRE` (`titre`),

@@ -11,18 +11,15 @@ class News
 
     private $description;
 
-    private $lien;
-
     private $auteur;
 
 
-    function __construct($idNews,$date,$titre,$description,$lien,$auteur)
+    function __construct($idNews,$date,$titre,$description,$auteur)
     {
         $this->idNews = $idNews;
         $this->date = $date;
         $this->titre = $titre;
         $this->description = $description;
-        $this->lien = $lien;
         $this->auteur = $auteur;
     }
 
@@ -90,21 +87,6 @@ class News
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLien()
-    {
-        return $this->lien;
-    }
-
-    /**
-     * @param mixed $lien
-     */
-    public function setLien($lien)
-    {
-        $this->lien = $lien;
-    }
 
     /**
      * @return mixed

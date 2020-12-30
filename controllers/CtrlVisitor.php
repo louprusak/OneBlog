@@ -54,11 +54,15 @@ class CtrlVisitor
      */
     public function searchNews()
     {
-        require_once('views/search.php');
-        $mdl = new ModelNews();
-        $date = $_GET['date'];
-        $listNewsSearch = $mdl->getNewsByDate($date);
-        require_once ('views/searchResult.php');
+        if(isset($_POST['date'])){
+            $mdl = new ModelNews();
+            $date = $_POST['date'];
+            $listNewsSearch = $mdl->getNewsByDate($date);
+            require_once ('views/searchResult.php');
+        }
+        else{
+            require_once('views/search.php');
+        }
     }
 
     /**
@@ -88,15 +92,21 @@ class CtrlVisitor
      */
     private function connection()
     {
-        require_once('views/connection.php');
-        $mdl = new ModelUser();
-        $login = $_GET['login'];
-        $password = $_GET['password'];
-        if(!$mdl->connection($login, $password)){
-            $error = 'Login ou mot de passe inconnu, veuillez réessayer !';
-            require_once ('views/error.php');
-        }else{
-            require_once ('views/index.php');
+        if(isset($_POST['login']) && isset($_POST['password'])){
+            $mdl = new ModelUser();
+            $login = $_POST['login'];
+            $password = $_POST['password'];
+            $resco = $mdl->connection($login, $password);
+
+            if(!$resco){
+                $error = 'Login ou mot de passe inconnu, veuillez réessayer !';
+                require_once ('views/error.php');
+            }else{
+                require_once ('views/index.php');
+            }
+        }
+        else{
+            require_once('views/connection.php');
         }
     }
 
@@ -105,18 +115,23 @@ class CtrlVisitor
      */
     public function register()
     {
-        require_once('views/register.php');
-        $mdl = new ModelUser();
-        $login = $_GET['login'];
-        $password = $_GET['password'];
-        try {
-            $mdl->register($login,$password);
-        }catch (PDOException $e){
-            $error = 'Login invalide, veuillez en entrer un nouveau svp.';
-            require_once ('views/error.php');
+        if(isset($_POST['login']) && isset($_POST['password'])){
+            $mdl = new ModelUser();
+            $login = $_POST['login'];
+            $password = $_POST['password'];
+            try {
+                $mdl->register($login,$password);
+            }catch (PDOException $e){
+                $error = 'Login invalide, veuillez en entrer un nouveau svp.';
+                require_once ('views/error.php');
+            }
+            $mdl->connection($login,$password);
+            require_once ('views/index.php');
         }
-        $mdl->connection($login,$password);
-        require_once ('views/index.php');
+        else{
+            require_once('views/register.php');
+        }
+
     }
 }
 

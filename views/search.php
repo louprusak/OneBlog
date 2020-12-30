@@ -21,10 +21,10 @@
             <h1 id="titre-recherche">Rechercher une News</h1>
             <hr class="separateur">
             <br>
-            <h5 id="auteur-news">Veuillez entrer une date pour trouver la news correspondante:</h5>
+            <h5 id="auteur-news">Veuillez entrer une date pour trouver les news correspondantes:</h5>
             <h5 id="auteur-news">Format attendu : DD / MM / YYYY</h5>
             <br>
-            <form action="controller/CtrlVisitor.php?action=search">
+            <form action="index.php?action=search&date=">
                 <input type="text" name="datenews">
                 <br><br><br>
                 <input class="btn-valid" type="submit" value="Rechercher" >

@@ -4,17 +4,17 @@
     </div>
     <div id="menu" class="col-xs-12 col-sm-12 col-lg-5">
         <nav>
-            <a class="btn" href="/views/search.php">Rechercher</a>
+            <a class="btn" href="index.php?action=search">Rechercher</a>
 
             <?php
-            if (!isset($_SESSION['role'])) {
-                //if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
-                    echo "<a class=\"btn\" id=\"btn-add\" href=\"/views/addNews.php\">Ajouter News</a>";
-                    echo "<a class=\"btn\" id=\"btn-add\" href=\"/controllers/FrontController.php?action=deconnection\">Se déconnecter</a>";
-                //}
+            if (isset($_SESSION['role'])) {
+                if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
+                    echo "<a class=\"btn\" id=\"btn-add\" href=\"index.php?action=addNews\">Ajouter News</a>";
+                    echo "<a class=\"btn\" id=\"btn-add\" href=\"index.php?action=deconnection\">Se déconnecter</a>";
+                }
             }
             else{
-                echo "<a class=\"btn\" href=\"/views/connection.php\">Se connecter</a>";
+                echo "<a class=\"btn\" href=\"index.php?action=connection\">Se connecter</a>";
             }
             ?>
         </nav>
