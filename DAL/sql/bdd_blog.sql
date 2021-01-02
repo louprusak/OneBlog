@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `role` tinyint(1) NOT NULL COMMENT 'Role de l''utilisateur: 0=user,1=admin',
   PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO `user`(`login`, `password`, `role`) VALUES ("admin","admin",true);
+INSERT INTO `user`(`login`, `password`, `role`) VALUES ("admin","$2y$10$VDcoBkq5f6WnI95oXGuHleua4gNwNCjfkTOmEKIJHCPRI3o.UzaXS",true);
 
 
 --CREATION DE LA TABLE NEWS

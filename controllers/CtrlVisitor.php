@@ -142,11 +142,19 @@ class CtrlVisitor
 
     }
 
-    public function readNews(){
-
+    public function readNews()
+    {/*
+        //if(isset($_GET['id'])){
+           // $id = Nettoyer::nettoyerInt($_POST['id']);
+            $mdl = new ModelNews();
+            print_r('modelNews ok');
+            $news = $mdl->getNewsById(1);
+            print_r('getNewsById ok');
+            print_r($news);
+            require_once ('views/news.php');
+        //}*/
     }
 }
 
 
 
-?>

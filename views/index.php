@@ -41,21 +41,21 @@
 
 
         if (isset($listNews)) {
-            foreach ($listNews as $News) {
-                echo '
-                    <div class="row">
-                        <div id="index-news" class="col-lg-12">
-                            <div id="index-news-contenu">
-                                <h6>' . $News->getAuteur() . ' le ' . $News->getDate() . '</h6>
-                                <hr class="hr-news">
-                                <h2>' . $News->getTitre() . '</h2>
+            foreach ($listNews as $news) {
+                echo "
+                    <div class=\"row\">
+                        <div id=\"index-news\" class=\"col-lg-12\">
+                            <div id=\"index-news-contenu\">
+                                <h6>" . strtoupper($news->getAuteur()) . " le " . $news->getDate() . "</h6>
+                                <hr class=\"hr-news\">
+                                <h2>" . $news->getTitre() . "</h2>
 
-                                <p>' . substr($News->getDescription(),0,500) . ' . . . </p>
-                                <a href="index.php?action=news&id=' . $News->getIdNews() . '">Lire la suite</a>
+                                <p>" . substr($news->getDescription(),0,500) . " . . . </p>
+                                <a href=\"index.php?action=readNews\">Lire la suite</a>
                             </div>
 
                         </div>
-                    </div>';
+                    </div>";
 
             }
         }else {

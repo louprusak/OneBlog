@@ -75,4 +75,9 @@ class ModelNews
     {
         return $this->gateway->getNewsByDate($date);
     }
+
+    public function getNewsById(int $idNews)
+    {
+        return $this->gateway->getNewsById($idNews);
+    }
 }

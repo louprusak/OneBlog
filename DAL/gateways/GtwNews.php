@@ -119,4 +119,15 @@ class GtwNews
         }
         return $this->tabNewsByUser;
     }
+
+    public function getNewsById(int $idNews):array
+    {
+        $query = 'SELECT * FROM news WHERE idNews=:idNews';
+        $this->con->executeQuery($query,array(':idNews'=> $idNews));
+        $results = $this->con->getResults();
+        foreach ($results as $row){
+            $this->tabNewsByUser[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
+        }
+        return $this->tabNewsByUser;
+    }
 }

@@ -13,40 +13,18 @@
 <div class="container-fluid">
     <?php
     require('header.php');
-    ?>
 
 
+    if(isset($news)){
+    echo'
     <div id="news-container">
         <div id="news" class="col-lg-12">
-            <h5>Posté par Loup RUSAK le 10 janvier 2020</h5>
+            <h5>Posté par ' . strtoupper($news->getAuteur()). ' le ' .strtoupper($news->getDate()). '</h5>
             <hr class="separateur">
             <br>
-            <h1 id="titre-news">Titre de la News</h1>
+            <h1 id="titre-news">'.$news->getTitre().'</h1>
             <br>
-            <p id="contenu-news">ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-                ceci est le texte de la news et nous allons tester sa mise en formececi est le texte de la news et nous allons tester sa mise en forme
-            </p>
+            <p id="contenu-news">'.$news->getDescription().'</p>
 
         </div>
     </div>
@@ -63,8 +41,8 @@
             </div>
             <hr class="separateur">
         </div>
+';}
 
-        <?php
         if(isset($listComments)){
             foreach ($listComments as $Comment) {
                 echo '
