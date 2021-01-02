@@ -23,14 +23,14 @@
             <br>
             <h5>Veuillez entrer un login et un mot de passe pour vous inscrire :</h5>
             <br>
-            <form action="index.php?action=register">
+            <form action="index.php?action=register" method="post">
                 <label for="login">Login</label>
                 <br>
-                <input type="text" name="login" id="login">
+                <input type="text" name="login">
                 <br>
                 <label for="mdp">Mot de Passe</label>
                 <br>
-                <input type="text" name="mdp" id="mdp">
+                <input type="password" name="password">
                 <br><br><br>
                 <input class="btn-valid" type="submit" value="S'inscrire">
                 <br><br>

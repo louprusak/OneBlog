@@ -68,10 +68,10 @@ class ModelNews
 
     /**
      * Fonction qui renvoie les news postées à une date spécifiée.
-     * @param $date Date de recherche.
+     * @param string $date Date de recherche.
      * @return array Tableau d'instance métiers des news à la date recherchée.
      */
-    public function getNewsByDate($date)
+    public function getNewsByDate(string $date)
     {
         return $this->gateway->getNewsByDate($date);
     }

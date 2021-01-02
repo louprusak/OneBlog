@@ -67,7 +67,7 @@ class GtwNews
      */
     public function getAllNews():array
     {
-        $query = 'SELECT * FROM news ORDER BY date desc ';
+        $query = 'SELECT * FROM news ORDER BY date DESC ';
         $params = array();
         $this->con->executeQuery($query,$params);
         $results = $this->con->getResults();
@@ -95,27 +95,27 @@ class GtwNews
      */
     public function getNewsByDate(string $date):array
     {
-        $query = 'SELECT * FROM news WHERE date=:date';
-        $this->con->executeQuery($query,array(':date'=>$date));
+        $query = 'SELECT * FROM news WHERE date= :date';
+        $this->con->executeQuery($query,array(':date'=> array($date, PDO::PARAM_STR)));
         $results = $this->con->getResults();
         foreach ($results as $row){
-            $this->tabNewsByDate[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);
+            $this->tabNewsByDate[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
         }
         return $this->tabNewsByDate;
     }
 
     /**
      * Fonction qui retourne les news d'un utilisateur depuis la base de données.
-     * @param int $idUser
+     * @param string $userLogin
      * @return array Tableau d'instance métiers des news trouvées en base de données écrites par un utilisateur donné.
      */
-    public function getNewsByUser(int $idUser):array
+    public function getNewsByUser(string $userLogin):array
     {
-        $query = 'SELECT * FROM news WHERE auteur=:idUser';
-        $this->con->executeQuery($query,array(':idUser'=>$idUser));
+        $query = 'SELECT * FROM news WHERE auteur=:loginUser';
+        $this->con->executeQuery($query,array(':loginUser'=> $userLogin));
         $results = $this->con->getResults();
         foreach ($results as $row){
-            $this->tabNewsByUser[] = new News($row['idNews'],$row['date'],$row['$titre'],$row['description'],$row['lien'],$row['auteur']);
+            $this->tabNewsByUser[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
         }
         return $this->tabNewsByUser;
     }

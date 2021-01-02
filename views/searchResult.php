@@ -35,7 +35,7 @@
                                 <hr class="hr-news">
                                 <h2>' . $News->getTitre() . '</h2>
 
-                                <p>' . $News->getDescription() . '</p>
+                                <p>' . substr($News->getDescription(),0,500) . '</p>
                                 <a href="news.php">Lire la suite</a>
                             </div>
 

@@ -7,8 +7,8 @@
             <a class="btn" href="index.php?action=search">Rechercher</a>
 
             <?php
-            if (isset($_SESSION['role'])) {
-                if ($_SESSION['role'] == 'user' or $_SESSION['role'] == 'admin') {
+            if (!empty($_SESSION['role'])) {
+                if ($_SESSION['role'] == 'user' || $_SESSION['role'] == 'admin') {
                     echo "<a class=\"btn\" id=\"btn-add\" href=\"index.php?action=addNews\">Ajouter News</a>";
                     echo "<a class=\"btn\" id=\"btn-add\" href=\"index.php?action=deconnection\">Se déconnecter</a>";
                 }

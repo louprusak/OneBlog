@@ -1,8 +1,5 @@
 <?php
 
-require_once ('model/ModelNews.php');
-require_once ('model/ModelUser.php');
-
 /**
  * Class CtrlVisitor
  */
@@ -22,17 +19,17 @@ class CtrlVisitor
                 case 'search':
                     $this->searchNews();
                     break;
-                case 'display':
-                    $this->displayNews();
-                    break;
                 case 'addComment':
                     $this->addComment();
                     break;
                 case 'register':
                     $this->register();
                     break;
-                case 'connection';
+                case 'connection':
                     $this->connection();
+                    break;
+                case 'readNews':
+                    $this->readNews();
                     break;
                 case null:
                 default:
@@ -54,9 +51,9 @@ class CtrlVisitor
      */
     public function searchNews()
     {
-        if(isset($_POST['date'])){
+        if(isset($_POST['dateNews'])){
             $mdl = new ModelNews();
-            $date = $_POST['date'];
+            $date = Nettoyer::nettoyerString($_POST['dateNews']);
             $listNewsSearch = $mdl->getNewsByDate($date);
             require_once ('views/searchResult.php');
         }
@@ -94,15 +91,17 @@ class CtrlVisitor
     {
         if(isset($_POST['login']) && isset($_POST['password'])){
             $mdl = new ModelUser();
-            $login = $_POST['login'];
-            $password = $_POST['password'];
+
+            $login = Nettoyer::nettoyerString($_POST['login']);
+            $password = Nettoyer::nettoyerString($_POST['password']);
+
             $resco = $mdl->connection($login, $password);
 
             if(!$resco){
                 $error = 'Login ou mot de passe inconnu, veuillez réessayer !';
                 require_once ('views/error.php');
             }else{
-                require_once ('views/index.php');
+                $this->displayNews();
             }
         }
         else{
@@ -117,20 +116,33 @@ class CtrlVisitor
     {
         if(isset($_POST['login']) && isset($_POST['password'])){
             $mdl = new ModelUser();
-            $login = $_POST['login'];
-            $password = $_POST['password'];
+
+            $login = Nettoyer::nettoyerString($_POST['login']);
+            $password = Nettoyer::nettoyerString($_POST['password']);
+
             try {
                 $mdl->register($login,$password);
             }catch (PDOException $e){
-                $error = 'Login invalide, veuillez en entrer un nouveau svp.';
+                $error = $e->getMessage().'Login invalide, veuillez en entrer un nouveau svp.';
                 require_once ('views/error.php');
             }
-            $mdl->connection($login,$password);
-            require_once ('views/index.php');
+
+            $resco = $mdl->connection($login,$password);
+
+            if(!$resco){
+                $error = 'Impossible de se connecter.';
+                require_once ('views/error.php');
+            }else{
+                header("Location: /");
+            }
         }
         else{
             require_once('views/register.php');
         }
+
+    }
+
+    public function readNews(){
 
     }
 }

@@ -45,7 +45,7 @@ class CtrlUser
     {
         $mdl = new ModelUser();
         $mdl->deconnection();
-        require('views/index.php');
+        header("Location: /");
     }
 
     /**
@@ -53,7 +53,7 @@ class CtrlUser
      */
     public function addNews(){
         require('views/addNews.php');
-        $mdl = new ModelNews();
+        /*$mdl = new ModelNews();
         $auteur = $_SESSION['login'];
         $content = $_GET['content'];
         $title= $_GET['title'];
@@ -63,7 +63,7 @@ class CtrlUser
             $error = 'Erreur lors de l\'ajout d\'une nouvelle news.';
             require ('views/error.php');
         }
-        require('views/index.php');
+        require('views/index.php');*/
     }
 
     /**

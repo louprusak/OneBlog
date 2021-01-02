@@ -27,8 +27,14 @@ class GtwUser
      * @param bool $role Admin ou non
      */
     public function addUser(string $login, string $password, bool $role){
-        $query='INSERT INTO user(login, password, role) VALUES(:login, :password, :role )';
-        $this->con->executeQuery($query,array(':login'=>$login, ':password'=>$password, ':role'=>$role));
+
+            $query='INSERT INTO user(login, password, role) VALUES(:login, :password, :role )';
+            $res = $this->con->executeQuery($query, array(
+                ':login'=> array($login,PDO::PARAM_STR),
+                ':password'=> array($password,PDO::PARAM_STR),
+                ':role'=> array($role,PDO::PARAM_BOOL)));
+            print_r($res);
+
     }
 
     /**
@@ -50,27 +56,23 @@ class GtwUser
      * @param string $password
      * @return bool existe ou n'existe pas
      */
-    public function exist(string $login, string $password):bool{
-        if($this->existLogin($login)){
-            $query='SELECT password FROM user WHERE password = :password';
-            $this->con->executeQuery($query, array(':password'=>$password));
-            $results=$this->con->getResults();
-            if (strcmp($password, (string)$results)) return true;
-            return false;
+    public function exist(string $login, string $password):?User{
+        $query='SELECT * FROM user WHERE login = :login';
+        $this->con->executeQuery($query, array(':login'=> array($login,PDO::PARAM_STR)));
+        $results=$this->con->getResults();
+        $results = count($results) != 0 ? $results[0] : null;
+
+
+        if($results == null){
+            return null;
         }
-        return false;
+
+        $user = new User($results['login'],$results['role']);
+        if(password_verify($password,$results['password'])){
+            return $user;
+        }
+        return null;
     }
 
-    /**
-     * Fonction qui vérifie en base de donnée si le login passé existe
-     * @param string $login
-     * @return bool
-     */
-    public function existLogin(string $login):bool{
-        $query='SELECT login FROM user WHERE login = :login';
-        $this->con->executeQuery($query, array(':login'=>$login));
-        $results=$this->con->getResults();
-        if (strcmp($login, (string)$results)) return true;
-        return false;
-    }
+
 }

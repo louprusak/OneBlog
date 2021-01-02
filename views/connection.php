@@ -23,14 +23,14 @@
             <br>
             <h5>Veuillez entrer votre login et votre mot de passe pour vous connecter :</h5>
             <br>
-            <form action="index.php?action=connection">
+            <form action="index.php?action=connection" method="post">
                 <label for="login">Login</label>
                 <br>
-                <input type="text" name="login" id="login">
+                <input type="text" name="login">
                 <br>
                 <label for="mdp">Mot de Passe</label>
                 <br>
-                <input type="text" name="mdp" id="mdp">
+                <input type="password" name="password">
                 <br><br><br>
                 <input class="btn-valid" type="submit" value="Se connecter">
                 <br><br>

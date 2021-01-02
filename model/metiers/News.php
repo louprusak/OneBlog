@@ -32,14 +32,6 @@ class News
     }
 
     /**
-     * @param mixed $idNews
-     */
-    public function setIdNews($idNews)
-    {
-        $this->idNews = $idNews;
-    }
-
-    /**
      * @return mixed
      */
     public function getDate()

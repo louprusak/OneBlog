@@ -1,8 +1,5 @@
 <?php
 
-require_once('DAL/gateways/GtwUser.php');
-require_once('DAL/gateways/GtwNews.php');
-
 /**
  * Class ModelUser
  */
@@ -27,7 +24,8 @@ class ModelUser
      * @param string $password Mot de passe de l'utilisateur.
      */
     public function register(string $login, string $password){
-        $this->gateway->addUser($login, $password, false);
+        $passwordHash = password_hash($password,PASSWORD_DEFAULT);
+        $this->gateway->addUser($login, $passwordHash, false);
     }
 
     /**
@@ -42,18 +40,22 @@ class ModelUser
         $loginNettoyer = Nettoyer::nettoyerString($login);
         $mdpNettoyer = Nettoyer::nettoyerString($mdp);
 
-        if($this->gateway->exist($loginNettoyer, $mdpNettoyer)){
-            $_SESSION['login']  = $loginNettoyer;
+        $user = $this->gateway->exist($loginNettoyer, $mdpNettoyer);
 
-            if($this->gateway->isAdmin($loginNettoyer)){
-                $_SESSION['role']  = "admin";
-            }else{
-                $_SESSION['role']  = "user";
-            }
-
-            return true;
+        if($user == null){
+            return false;
         }
-        return false;
+
+        $_SESSION['login']  = $user->getLogin();
+
+        if($user->getRole()){
+            $_SESSION['role']  = "admin";
+        }
+        else{
+            $_SESSION['role']  = "user";
+        }
+
+        return true;
     }
 
     /**
@@ -77,11 +79,19 @@ class ModelUser
      */
     public function getUser() : ?User
     {
-        if(isset($_SESSION['login']) && isset($_SESSION['role'])){
-            $loginNettoyer = Nettoyer::nettoyer_string($_SESSION['login']);
-            $roleNettoyer = Nettoyer::nettoyer_string($_SESSION['role']);
+        if(isset($_SESSION['login']) && isset($_SESSION['role']) ){
 
-            return new User(1,$loginNettoyer,"",$roleNettoyer);
+            $loginNettoyer = Nettoyer::nettoyerString($_SESSION['login']);
+            $roleNettoyer = Nettoyer::nettoyerString($_SESSION['role']);
+
+            if($roleNettoyer == 'admin'){
+                $roleUser = true;
+            }
+            else{
+                $roleUser = false;
+            }
+
+            return new User($loginNettoyer,"",$roleUser);
         }
         return null;
     }

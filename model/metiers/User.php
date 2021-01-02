@@ -6,42 +6,27 @@ class User
 
 
 
-    private $idUser;
 
-    private $login;
 
-    private $password;
+    private string $login;
 
-    private $role;
 
-    public function __construct($idUser,$login,$password,$role)
+
+    private ?bool $role;
+
+    public function __construct($login,$role)
     {
-        $this->idUser = $idUser;
+
         $this->login = $login;
-        $this->password = $password;
         $this->role = $role;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
 
-    /**
-     * @param mixed $idUser
-     */
-    public function setId($idUser)
-    {
-        $this->idUser = $idUser;
-    }
 
     /**
      * @return mixed
      */
-    public function getLogin()
+    public function getLogin():string
     {
         return $this->login;
     }
@@ -54,26 +39,12 @@ class User
         $this->password = $login;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
 
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
 
     /**
      * @return mixed
      */
-    public function getRole()
+    public function getRole():?bool
     {
         return $this->role;
     }
@@ -81,7 +52,7 @@ class User
     /**
      * @param mixed $role
      */
-    public function setRole($role)
+    public function setRole(?bool $role)
     {
         $this->role = $role;
     }

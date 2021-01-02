@@ -32,7 +32,14 @@
     <div>
 
 
+
         <?php
+
+        if(isset($_SESSION['login']) && !empty($_SESSION['login'])){
+            echo "<br><br><h4 class=\"white\">Bienvenue ". strtoupper($_SESSION['login'])." !</h4>";
+        }
+
+
         if (isset($listNews)) {
             foreach ($listNews as $News) {
                 echo '
@@ -43,8 +50,8 @@
                                 <hr class="hr-news">
                                 <h2>' . $News->getTitre() . '</h2>
 
-                                <p>' . substr($News->getDescription(),0,500) . '... </p>
-                                <a href="news.php">Lire la suite</a>
+                                <p>' . substr($News->getDescription(),0,500) . ' . . . </p>
+                                <a href="index.php?action=news&id=' . $News->getIdNews() . '">Lire la suite</a>
                             </div>
 
                         </div>

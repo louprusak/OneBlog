@@ -16,8 +16,7 @@ class GtwComment
      * GtwComment constructor.
      */
     public function __construct(){
-        global $dsn, $username, $password;
-        $con = new Connection($dsn,$username,$password);
+        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
         $this->tabAllComment=array();
         $this->tabCommentByNews=array();
     }
