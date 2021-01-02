@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Table ModelNews du blog';
 ALTER TABLE `news`
   ADD CONSTRAINT `NEWS_AUTEUR` FOREIGN KEY (`auteur`) REFERENCES `user` (`login`);
-COMMIT;
+
 INSERT INTO `news` (`idNews`, `date`, `titre`, `description`, `auteur`) VALUES
 (1, '2021-01-02', 'Covid-19 : l’est de la France bascule dans le couvre-feu à 18 heures', 'En Bourgogne-Franche-Comté, nul ne se berçait d’illusions. ' ||
  'Le « durcissement » annoncé du couvre-feu, pour reprendre une expression du préfet de région, Fabien Sudry, était inévitable. ' ||
