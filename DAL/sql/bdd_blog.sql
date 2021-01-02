@@ -33,6 +33,19 @@ CREATE TABLE IF NOT EXISTS `news` (
 ALTER TABLE `news`
   ADD CONSTRAINT `NEWS_AUTEUR` FOREIGN KEY (`auteur`) REFERENCES `user` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+INSERT INTO `news`(`date`, `titre`, `description`, `auteur`) VALUES (to_date(current_date),'Que pouvons nous faire le soir du nouvel an ?',
+'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+ 'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+  'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+   'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?',
+   1);
+
+INSERT INTO `news`(`date`, `titre`, `description`, `auteur`) VALUES (to_date(current_date),'Que pouvons nous ne pas faire le soir du nouvel an ?',
+'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+ 'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+  'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?' ||
+   'Vous ne savez pas ce qui est interdit ou autorisé ?Vous ne savez pas ce qui est interdit ou autorisé ?',
+    1);
 
 
 --CREATION DE LA TABLE COMMENT (COMMENTAIRES)
