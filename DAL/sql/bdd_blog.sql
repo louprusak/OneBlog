@@ -25,12 +25,13 @@ CREATE TABLE IF NOT EXISTS `news` (
   `titre` varchar(400) NOT NULL COMMENT 'titre de la news',
   `description` mediumtext NOT NULL COMMENT 'description de la news',
   `auteur` varchar(30) NOT NULL COMMENT 'Auteur de la news',
-  PRIMARY KEY (`idnews`),
+  PRIMARY KEY (`idNews`),
   UNIQUE KEY `UNIQUE_TITRE` (`titre`),
   KEY `NEWS_AUTEUR` (`auteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table ModelNews du blog';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Table ModelNews du blog';
 ALTER TABLE `news`
-  ADD CONSTRAINT `NEWS_AUTEUR` FOREIGN KEY (`auteur`) REFERENCES `user` (`login`) ;
+  ADD CONSTRAINT `NEWS_AUTEUR` FOREIGN KEY (`auteur`) REFERENCES `user` (`login`);
+COMMIT;
 INSERT INTO `news` (`idNews`, `date`, `titre`, `description`, `auteur`) VALUES
 (1, '2021-01-02', 'Covid-19 : l’est de la France bascule dans le couvre-feu à 18 heures', 'En Bourgogne-Franche-Comté, nul ne se berçait d’illusions. ' ||
  'Le « durcissement » annoncé du couvre-feu, pour reprendre une expression du préfet de région, Fabien Sudry, était inévitable. ' ||
@@ -63,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   KEY `COMMENT_AUTEUR` (`auteur`),
   KEY `COMMENT_NEWS` (`idNews`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ALTER TABLE `comment`
   ADD CONSTRAINT `COMMENT_AUTEUR` FOREIGN KEY (`auteur`) REFERENCES `user` (`login`),
-  ADD CONSTRAINT `COMMENT_NEWS` FOREIGN KEY (`idNews`) REFERENCES `news` (`idnews`);
+  ADD CONSTRAINT `COMMENT_NEWS` FOREIGN KEY (`idNews`) REFERENCES `news` (`idNews`);
