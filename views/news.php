@@ -36,7 +36,7 @@
                     <h5 id="titre-comment">Commentaires de la news</h5>
                 </div>
                 <div class="col-lg-6">
-                    <a class="btn" id="btn-add" href="addComment.php">Ajouter un commentaire</a>
+                    <a class="btn" id="btn-add" href="index.php?action=addcomment&id='.$news->getIdNews().'">Ajouter un commentaire</a>
                 </div>
             </div>
             <hr class="separateur">
@@ -49,7 +49,7 @@
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>'.$Comment->getAuteur().'</h6>
+                                <h6>Commentaire de '.strtoupper($Comment->getAuteur()).'</h6>
                                 <hr class="hr-news">
                                 <p>'.$Comment->getMessage().'</p>
                             </div>

@@ -58,8 +58,8 @@ img{
 }
 
 #compteur{
-    color: white;
-    vertical-align: center;
+
+    margin-top: 10px;
 }
 
 /* BOUTONS */

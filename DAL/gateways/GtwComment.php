@@ -29,7 +29,10 @@ class GtwComment
      */
     public function addComment($idNews, $auteur, $message){
         $query='INSERT INTO comment(idNews, auteur, message) VALUES(:idNews, :auteur, :message)';
-        $this->con->executeQuery($query,array(':idNews'=>$idNews, ':auteur'=>$auteur, ':message'=>$message));
+        $this->con->executeQuery($query,array(
+            ':idNews'=>array($idNews,PDO::PARAM_INT),
+            ':auteur'=>array($auteur,PDO::PARAM_STR),
+            ':message'=>array($message,PDO::PARAM_STR)));
     }
 
     /**

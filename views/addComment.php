@@ -22,14 +22,14 @@
             <br>
             <h5 id="auteur-news">Veuillez saisir les informations suivantes pour poster votre commentaire :</h5>
             <br>
-            <form action="" method="post" id="form-commentaire">
+            <form action="index.php?action=addcomment&id=<?=$_GET['id']?>" method="post" id="form-commentaire">
                 <label for="pseudo">Votre Pseudo :</label>
                 <br>
-                <input type="text" name="pseudo" id="pseudo">
+                <input type="text" name="login">
                 <br>
                 <label for="commentaire">Votre Commentaire :</label>
                 <br>
-                <textarea name="commentaire" cols="80%" rows="7" re id="commentaire"></textarea>
+                <textarea name="commentaire" cols="80%" rows="7"></textarea>
                 <br><br>
                 <input class="btn-valid" type="submit" value="Envoyer le commentaire"/>
                 <br><br><br>

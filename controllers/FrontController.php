@@ -27,7 +27,7 @@ class FrontController
 
 
 
-        $listActionsVisitor = ['connection','search','register','addComment','readnews'];
+        $listActionsVisitor = ['connection','search','register','addcomment','readnews'];
         $listActionsUser = ['deconnection','addnews','deletemynews'];
         $listActionsAdmin = ['deletenews'];
 

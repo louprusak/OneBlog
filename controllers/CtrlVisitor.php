@@ -67,11 +67,20 @@ class CtrlVisitor
      */
     public function addComment()
     {
-        require_once('views/addComment.php');
-        $mdl = new ModelComment();
-        $comment = $_GET['comment'];
-        $pseudo = $_GET['pseudo'];
-        $mdl->addComment(1,$pseudo,$comment);
+        if(isset($_POST['login']) && isset($_POST['commentaire']) && !empty($_POST['login']) && !empty($_POST['commentaire']) && isset($_GET['id'])){
+            $login = Nettoyer::nettoyerString($_POST['login']);
+            $commentaire = Nettoyer::nettoyerString($_POST['commentaire']);
+            $idnews = Nettoyer::nettoyerInt($_GET['id']);
+
+            $mdl = new ModelComment();
+
+            $mdl->addComment($idnews,$login,$commentaire);
+
+            header('Location: /?action=readnews&id='.$idnews);
+        }
+        else{
+            require_once ('views/addComment.php');
+        }
     }
 
     /**
