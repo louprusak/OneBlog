@@ -57,6 +57,11 @@ img{
     margin-bottom: 10px;
 }
 
+#compteur{
+    color: white;
+    vertical-align: center;
+}
+
 /* BOUTONS */
 
 .btn{

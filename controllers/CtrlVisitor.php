@@ -89,7 +89,7 @@ class CtrlVisitor
      */
     private function connection()
     {
-        if(isset($_POST['login']) && isset($_POST['password'])){
+        if(isset($_POST['login']) && isset($_POST['password']) && !empty($_POST['login']) && !empty($_POST['password'])){
             $mdl = new ModelUser();
 
             $login = Nettoyer::nettoyerString($_POST['login']);
@@ -114,7 +114,7 @@ class CtrlVisitor
      */
     public function register()
     {
-        if(isset($_POST['login']) && isset($_POST['password'])){
+        if(isset($_POST['login']) && isset($_POST['password']) && !empty($_POST['login']) && !empty($_POST['password'])){
             $mdl = new ModelUser();
 
             $login = Nettoyer::nettoyerString($_POST['login']);

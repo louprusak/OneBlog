@@ -54,7 +54,8 @@ class GtwComment
     public function getNbComment():int{
         $query = 'SELECT COUNT(*) FROM comment';
         $this->con->executeQuery($query);
-        return $this->con->getResults()[0];
+        $results = $this->con->getResults();
+        return $results[0][0];
     }
 
     /**

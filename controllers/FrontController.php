@@ -15,7 +15,7 @@ class FrontController
         //print_r($_SESSION);
 
         if(isset($_REQUEST['action'])){
-            $action  = $_REQUEST['action'] ?? null;
+            $action  = strtolower($_REQUEST['action']) ?? null;
         }
         else{
             $action = null;

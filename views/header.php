@@ -4,6 +4,7 @@
     </div>
     <div id="menu" class="col-xs-12 col-sm-12 col-lg-5">
         <nav>
+            <a class="btn" href="index.php">Accueil</a>
             <a class="btn" href="index.php?action=search">Rechercher</a>
 
             <?php
@@ -21,13 +22,12 @@
     </div>
 
     <?php
-        // A FAIRE MARCHER !
 
-        //require_once ('DAL/gateways/GtwComment.php');
-        //$gtwcom = new GtwComment();
-        //$nbcom = $gtwcom->getNbComment();
-        echo "<p class=\"col-xs-6 col-md-6 col-lg-2\"> Commentaires du site : "/*.$nbcom*/."</p>";
-        echo "<p class=\"col-xs-6 col-md-6 col-lg-2\"> Vos commentaires : "/*.$nbcom*/."</p>";
+        $gtwcom = new GtwComment();
+        $nbcom = $gtwcom->getNbComment();
+
+        echo "<h6 id=\"compteur\" class=\"col-xs-6 col-md-6 col-lg-2\"> Commentaires du site : ".$nbcom."</h6>";
+        echo "<h6 id=\"compteur\" class=\"col-xs-6 col-md-6 col-lg-2\"> Vos commentaires : "/*.$nbcom*/."</h6>";
     ?>
 
 </header>

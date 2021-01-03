@@ -46,9 +46,12 @@ class GtwNews
      */
     public function addNews(string $date,string $titre,string $description,string $auteur)
     {
-        // ATTENTION AU TO DATE POUR LE SQL
         $query = 'INSERT INTO news(date,titre,description,auteur) VALUES(:date,:titre,:description,:auteur)';
-        $this->con->executeQuery($query,array(':date'=>$date,':titre'=>$titre,':description'=>$description,':auteur'=>$auteur));
+        $this->con->executeQuery($query,array(
+            ':date'=>array($date,PDO::PARAM_STR),
+            ':titre'=>array($titre,PDO::PARAM_STR),
+            ':description'=>array($description,PDO::PARAM_STR),
+            ':auteur'=>array($auteur,PDO::PARAM_STR)));
     }
 
     /**

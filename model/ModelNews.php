@@ -26,7 +26,7 @@ class ModelNews
      */
     public function addNews(string $titre, string $description, string $auteur)
     {
-        $today = date('d/m/y');
+        $today = date('y-m-d');
         $this->gateway->addNews($today, $titre, $description, $auteur);
     }
 

@@ -51,19 +51,21 @@ class CtrlUser
     /**
      * Fonction d'ajout de news du controlleur user.
      */
-    public function addNews(){
-        require('views/addNews.php');
-        /*$mdl = new ModelNews();
-        $auteur = $_SESSION['login'];
-        $content = $_GET['content'];
-        $title= $_GET['title'];
-        try {
-            $mdl->addNews($title,$content,$auteur);
-        }catch (Exception $e){
-            $error = 'Erreur lors de l\'ajout d\'une nouvelle news.';
-            require ('views/error.php');
+    public function addNews()
+    {
+        if(isset($_POST['titre']) && isset($_POST['contenu']) && !empty($_POST['titre']) && !empty($_POST['contenu'])){
+            $titre = Nettoyer::nettoyerString($_POST['titre']);
+            $contenu = Nettoyer::nettoyerString($_POST['contenu']);
+
+            $mdl = new ModelNews();
+
+            $mdl->addNews($titre,$contenu,$_SESSION['login']);
+
+            header('Location: /');
         }
-        require('views/index.php');*/
+        else{
+            require_once ('views/addNews.php');
+        }
     }
 
     /**

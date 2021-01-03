@@ -22,14 +22,14 @@
             <br>
             <h5 id="auteur-news">Veuillez saisir les informations suivantes pour créer et poster votre News</h5>
             <br>
-            <form action="" method="post" id="form-commentaire">
+            <form action="index.php?action=addnews" method="post" id="form-commentaire">
                 <label for="titre">Titre de votre news :</label>
                 <br>
-                <textarea name="titre" cols="80%" rows="1" id="titre"></textarea>
+                <textarea name="titre" cols="80%" rows="1""></textarea>
                 <br>
                 <label for="contenu">Contenu de votre news :</label>
                 <br>
-                <textarea name="contenu" cols="100%" rows="15" id="contenu"></textarea>
+                <textarea name="contenu" cols="100%" rows="15"></textarea>
                 <br><br>
                 <input class="btn-valid" type="submit" value="Créer et poster la news"/>
                 <br><br><br>
