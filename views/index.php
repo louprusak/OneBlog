@@ -51,9 +51,14 @@
                                 <h2>" . $news->getTitre() . "</h2>
 
                                 <p>" . substr($news->getDescription(),0,500) . " . . . </p>
-                                <a href=\"index.php?action=readNews\">Lire la suite</a>
+                                <a id=\"btn-next\" href=\"index.php?action=readnews&id=".$news->getIdNews()."\">Lire la suite</a>";
+                if(isset($_SESSION['role'])){
+                    if($_SESSION['role'] == 'admin'){
+                        echo " <a id=\"btn-delete\" href=\"index.php?action=deletenews\">Supprimer</a>";
+                    }
+                }
+                echo "        
                             </div>
-
                         </div>
                     </div>";
 
@@ -62,6 +67,7 @@
             echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";
         }
         ?>
+        <br><br><br>
     </div>
 
 

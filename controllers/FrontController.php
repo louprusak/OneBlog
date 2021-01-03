@@ -15,7 +15,7 @@ class FrontController
         //print_r($_SESSION);
 
         if(isset($_REQUEST['action'])){
-            $action  = strtolower($_REQUEST['action']) ?? null;
+            $action  = $_REQUEST['action'] ?? null;
         }
         else{
             $action = null;
@@ -25,9 +25,9 @@ class FrontController
 
         $admin = $mdl->getUser();
 
-        $listActionsVisitor = ['connection','search','register','addComment','readNews'];
-        $listActionsUser = ['deconnection','addNews','deleteMyNews'];
-        $listActionsAdmin = ['deleteNews'];
+        $listActionsVisitor = ['connection','search','register','addComment','readnews'];
+        $listActionsUser = ['deconnection','addnews','deletemynews'];
+        $listActionsAdmin = ['deletenews'];
 
         //Si l'action fait partie de la liste d'actions possibles du visiteur
         if(in_array($action, $listActionsVisitor)){

@@ -120,14 +120,13 @@ class GtwNews
         return $this->tabNewsByUser;
     }
 
-    public function getNewsById(int $idNews):array
+    public function getNewsById(int $idNews):News
     {
         $query = 'SELECT * FROM news WHERE idNews=:idNews';
-        $this->con->executeQuery($query,array(':idNews'=> $idNews));
+        $this->con->executeQuery($query,array(':idNews'=> array($idNews,PDO::PARAM_INT)));
         $results = $this->con->getResults();
-        foreach ($results as $row){
-            $this->tabNewsByUser[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
-        }
-        return $this->tabNewsByUser;
+        $results = count($results) != 0 ? $results[0] : null;
+
+        return new News($results['idNews'],$results['date'],$results['titre'],$results['description'],$results['auteur']);
     }
 }

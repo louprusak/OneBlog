@@ -7,7 +7,7 @@ class GtwComment
 {
     protected static $dsn='mysql:host=localhost;dbname=blog';
     protected static $username='root';
-    protected static $password='';
+    protected static $password='root';
     private $con;
     private $tabAllComment;
     private $tabCommentByNews;
@@ -39,7 +39,7 @@ class GtwComment
      */
     public function getCommentByNews($idNews):array{
         $query = 'SELECT * FROM comment WHERE idNews = :idNews';
-        $this->con->executeQuery($query,array(':idNews'=>$idNews));
+        $this->con->executeQuery($query,array(':idNews'=> array($idNews,PDO::PARAM_INT)));
         $results=$this->con->getResults();
         foreach ($results as $row){
             $this->tabCommentByNews[] = new Comment($row['idComment'],$row['idNews'],$row['auteur'],$row['message']);

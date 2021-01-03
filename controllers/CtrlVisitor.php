@@ -12,15 +12,18 @@ class CtrlVisitor
     public function __construct($action)
     {
         //$action = $_GET['action'] ?? null;
-
+        //print_r($action);
 
         try{
             switch(strtolower($action)){
                 case 'search':
                     $this->searchNews();
                     break;
-                case 'addComment':
+                case 'addcomment':
                     $this->addComment();
+                    break;
+                case 'readnews':
+                    $this->readNews();
                     break;
                 case 'register':
                     $this->register();
@@ -28,16 +31,13 @@ class CtrlVisitor
                 case 'connection':
                     $this->connection();
                     break;
-                case 'readNews':
-                    $this->readNews();
-                    break;
                 case null:
                 default:
                     $this->displayNews();
 
             }
         }catch (PDOException $e){
-            $error = 'Erreur lors de la connexion à la base de données.';
+            $error = $e->getMessage().'Erreur lors de la connexion à la base de données.';
             require_once('views/error.php');
         }catch (Exception $e2){
             $error= 'Erreur lors de l\'éxécution du code du controller visiteur';
@@ -143,16 +143,15 @@ class CtrlVisitor
     }
 
     public function readNews()
-    {/*
-        //if(isset($_GET['id'])){
-           // $id = Nettoyer::nettoyerInt($_POST['id']);
-            $mdl = new ModelNews();
-            print_r('modelNews ok');
-            $news = $mdl->getNewsById(1);
-            print_r('getNewsById ok');
-            print_r($news);
+    {
+        if(isset($_GET['id'])){
+            $id = Nettoyer::nettoyerInt($_GET['id']);
+            $mdlnews = new ModelNews();
+            $mdlcom = new ModelComment();
+            $news = $mdlnews->getNewsById($id);
+            $listComments = $mdlcom->getCommentByNews($id);
             require_once ('views/news.php');
-        //}*/
+        }
     }
 }
 

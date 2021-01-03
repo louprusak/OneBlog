@@ -32,10 +32,10 @@
     <div id="comment-container">
         <div id="comment">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <h5 id="titre-comment">Commentaires de la news</h5>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <a class="btn" id="btn-add" href="addComment.php">Ajouter un commentaire</a>
                 </div>
             </div>

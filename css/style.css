@@ -2,7 +2,7 @@
 
 [class*="col-"], footer{
 
-   /* border: 2px solid green;
+    /*border: 2px solid green;
     border-radius: 6px;*/
 
     line-height: 40px;
@@ -98,8 +98,31 @@ img{
     border-color: green;
     background-color: green;
 }
-#btn-delete{
+#btn-next{
+    line-height: 40px;
     border: 2px solid black;
+    border-radius: 30px;
+    margin: 10px;
+
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+#btn-next:hover{
+    background-color: black;
+    color: white;
+}
+#btn-delete{
+    line-height: 40px;
+    border: 2px solid black;
+    border-radius: 30px;
+    margin: 10px;
+
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
 }
 #btn-delete:hover{
     background-color: red;
