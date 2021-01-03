@@ -12,7 +12,7 @@ class User
 
 
 
-    private ?bool $role;
+    private bool $role;
 
     public function __construct($login,$role)
     {
@@ -44,7 +44,7 @@ class User
     /**
      * @return mixed
      */
-    public function getRole():?bool
+    public function getRole():bool
     {
         return $this->role;
     }
@@ -52,7 +52,7 @@ class User
     /**
      * @param mixed $role
      */
-    public function setRole(?bool $role)
+    public function setRole(bool $role)
     {
         $this->role = $role;
     }

@@ -21,29 +21,35 @@
 
 
     <div>
-
+        <br><br><br>
         <h4 class="white">Résultat de la recherche :</h4>
 
         <?php
-        if (isset($listNewsSearch)) {
-            foreach ($listNewsSearch as $News) {
-                echo '
-                    <div class="row">
-                        <div id="index-news" class="col-lg-12">
-                            <div id="index-news-contenu">
-                                <h6>' . $News->getAuteur() . 'le' . $News->getDate() . '</h6>
-                                <hr class="hr-news">
-                                <h2>' . $News->getTitre() . '</h2>
+        if (isset($listNewsSearch) && !empty($listNewsSearch)) {
+            foreach ($listNewsSearch as $news) {
+                echo "
+                    <div class=\"row\">
+                        <div id=\"index-news\" class=\"col-lg-12\">
+                            <div id=\"index-news-contenu\">
+                                <h6>" . strtoupper($news->getAuteur()) . " le " . $news->getDate() . "</h6>
+                                <hr class=\"hr-news\">
+                                <h2>" . $news->getTitre() . "</h2>
 
-                                <p>' . substr($News->getDescription(),0,500) . '</p>
-                                <a href="news.php">Lire la suite</a>
+                                <p>" . substr($news->getDescription(),0,500) . " . . . </p>
+                                <a id=\"btn-next\" href=\"index.php?action=readnews&id=".$news->getIdNews()."\">Lire la suite</a>";
+                if(isset($_SESSION['role'])){
+                    if($_SESSION['role'] == 'admin'){
+                        echo " <a id=\"btn-delete\" href=\"index.php?action=deletenews\">Supprimer</a>";
+                    }
+                }
+                echo "        
                             </div>
-
                         </div>
-                    </div>';
+                    </div>";
+
             }
         } else {
-            echo "<h4 class=\"white\">Aucune news trouvée à cette date ...</h4>";
+            echo "<br><br><h4 class=\"white\">Aucune news trouvée à cette date ...</h4>";
         }
         ?>
     </div>

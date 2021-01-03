@@ -43,7 +43,7 @@
         </div>
 ';}
 
-        if(isset($listComments)){
+        if(isset($listComments) && !empty($listComments)){
             foreach ($listComments as $Comment) {
                 echo '
                     <div class="row">

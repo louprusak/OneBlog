@@ -25,6 +25,8 @@ class FrontController
 
         $admin = $mdl->getUser();
 
+
+
         $listActionsVisitor = ['connection','search','register','addComment','readnews'];
         $listActionsUser = ['deconnection','addnews','deletemynews'];
         $listActionsAdmin = ['deletenews'];
@@ -43,9 +45,10 @@ class FrontController
         }
         //Si l'action fait partie de la liste d'actions possibles de l'admin
         else if(in_array($action, $listActionsAdmin)){
-            if($admin->getRole() == null || $admin->getRole() == 0){
+            if($admin->getRole() == null || !$admin->getRole()){
+                print_r($admin->getRole());
                 new CtrlVisitor('connection');
-            }else if($admin->getRole() === 1){
+            }else if($admin->getRole()){
                 new CtrlAdmin($action);
             }
         }

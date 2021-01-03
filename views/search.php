@@ -22,6 +22,7 @@
             <hr class="separateur">
             <br>
             <h5 id="auteur-news">Veuillez entrer une date pour trouver les news correspondantes:</h5>
+            <h5 id="auteur-news">Si le selectionneur de date ne s'affiche pas, essayer avec ce format : jj/mm/aaaa</h5>
             <br>
             <form action="index.php?action=search" method="post">
                 <input type="date" name="dateNews">

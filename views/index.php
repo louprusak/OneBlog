@@ -54,7 +54,10 @@
                                 <a id=\"btn-next\" href=\"index.php?action=readnews&id=".$news->getIdNews()."\">Lire la suite</a>";
                 if(isset($_SESSION['role'])){
                     if($_SESSION['role'] == 'admin'){
-                        echo " <a id=\"btn-delete\" href=\"index.php?action=deletenews\">Supprimer</a>";
+                        echo " <a id=\"btn-delete\" href=\"index.php?action=deletenews&id=".$news->getIdNews()."\">Supprimer</a>";
+                    }
+                    if($_SESSION['role'] == 'user' && $_SESSION['login'] == $news->getAuteur()){
+                        echo " <a id=\"btn-delete\" href=\"index.php?action=deletemynews&id=".$news->getIdNews()."\">Supprimer ma news</a>";
                     }
                 }
                 echo "        

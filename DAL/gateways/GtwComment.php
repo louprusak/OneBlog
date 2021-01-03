@@ -54,18 +54,24 @@ class GtwComment
     public function getNbComment():int{
         $query = 'SELECT COUNT(*) FROM comment';
         $this->con->executeQuery($query);
-        return $this->con->getResults();
+        return $this->con->getResults()[0];
     }
 
     /**
      * Fonction qui renvoie le nombre de commentaires d'une news donnée
-     * @param $idNews
+     * @param int $id
      * @return int Nombre de commentaires d'une news.
      */
-    public function getNbCommentByNews($idNews):int{
-        $query = 'SELECT COUNT(*) FROM comment WHERE idNews = :idNews';
-        $this->con->executeQuery($query,array(':idNews'=>$idNews));
-        return $this->con->getResults();
+    public function getNbCommentByNews(int $id):int{
+        $query = 'SELECT COUNT(*) FROM comment WHERE idNews = :id';
+        $this->con->executeQuery($query,array(':id'=> array($id,PDO::PARAM_INT)));
+        $results = $this->con->getResults();
+        return $results[0][0];
+    }
+
+    public function deleteCommentByNews(int $idNews){
+        $query = 'DELETE FROM comment WHERE idNews = :idNews';
+        $this->con->executeQuery($query, array(':idNews'=> array($idNews,PDO::PARAM_INT)));
     }
 
     /**
@@ -75,7 +81,8 @@ class GtwComment
      */
     public function getNbCommentByUser($idUser):int{
         $query = 'SELECT COUNT(*) FROM comment WHERE auteur = :idUser';
-        $this->con->executeQuery($query,array(':idUser'=>$idUser));
-        return $this->con->getResults();
+        $this->con->executeQuery($query,array(':idUser'=> array($idUser,PDO::PARAM_INT)));
+        $results = $this->con->getResults();
+        return $results[0][0];
     }
 }

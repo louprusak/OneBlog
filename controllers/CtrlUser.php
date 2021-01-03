@@ -18,10 +18,10 @@ class CtrlUser
                 case $action='deconnection':
                     $this->deconnection();
                     break;
-                case $action='addNews':
+                case $action='addnews':
                     $this->addNews();
                     break;
-                case $action='deleteMyNews':
+                case $action='deletemynews':
                     $this->deleteMyNews();
                     break;
                 case null:
@@ -30,7 +30,7 @@ class CtrlUser
                     require('views/error.php');
             }
         }catch (PDOException $e){
-            $error = 'Erreur lors de la connexion à la base de données.';
+            $error = $e->getMessage().'Erreur lors de la connexion à la base de données.';
             require('views/error.php');
         }catch (Exception $e2){
             $error = 'Erreur lors de l\'éxécution du code du controller user';
@@ -70,9 +70,19 @@ class CtrlUser
      * Fonction de suppression des news d'un utilisateur normale du controlleur user.
      */
     public function deleteMyNews(){
-        $mdl = new ModelNews();
-        $mdl->deleteNews(0);// A TROUVER COMMENT RECUP ID NEWS DE CELLE SELECTIONNEE
-        require ('views/index.php');
+        if(isset($_GET['id'])){
+            // SI IL EXISTE DES COMMENTAIRE IL FAUT LES SUPPRIMER AVANT
+            $id = Nettoyer::nettoyerInt($_GET['id']);
+
+            $mdlcom = new ModelComment();
+            if($mdlcom->getNbCommentByNews($id) != 0){
+                $mdlcom->deleteCommentByNews($id);
+            }
+
+            $mdl = new ModelNews();
+            $mdl->deleteNews($id);
+            header('Location: /');
+        }
     }
 
 }

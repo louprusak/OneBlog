@@ -53,12 +53,12 @@ class GtwNews
 
     /**
      * Fonction de suppression d'une news en fonction de son titre.
-     * @param string $titre
+     * @param int $id
      */
-    public function deleteNews(string $titre)
+    public function deleteNews(int $id)
     {
-        $query = 'DELETE FROM news WHERE idNews=:titre';
-        $this->con->executeQuery($query,array(':titre'=>$titre));
+        $query = 'DELETE FROM news WHERE idNews=:id';
+        $this->con->executeQuery($query,array(':id'=> array($id,PDO::PARAM_INT)));
     }
 
     /**

@@ -91,7 +91,7 @@ class ModelUser
                 $roleUser = false;
             }
 
-            return new User($loginNettoyer,"",$roleUser);
+            return new User($loginNettoyer,$roleUser);
         }
         return null;
     }

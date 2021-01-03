@@ -15,7 +15,7 @@ class CtrlAdmin
 
         try{
             switch(strtolower($action)){
-                case 'deleteNews':
+                case 'deletenews':
                     $this->deleteNews();
                     break;
                 case null:
@@ -24,11 +24,11 @@ class CtrlAdmin
                     require('views/error.php');
             }
         }catch (PDOException $e){
-            $error = 'Erreur lors de la connexion à la base de données.';
-            require('../views/error.php');
+            $error = $e->getMessage().'Erreur lors de la connexion à la base de données.';
+            require('views/error.php');
         }catch (Exception $e2){
             $error = 'Erreur lors de l\'éxécution du code du controller user';
-            require('../views/error.php');
+            require('views/error.php');
         }
     }
 
@@ -37,9 +37,19 @@ class CtrlAdmin
      */
     public function deleteNews()
     {
-        $mdl = new ModelNews();
-        $mdl->deleteNews(0);// A TROUVER COMMENT RECUP ID NEWS DE CELLE SELECTIONNEE
-        require ('views/index.php');
+        if(isset($_GET['id'])){
+            // SI IL EXISTE DES COMMENTAIRE IL FAUT LES SUPPRIMER AVANT
+            $id = Nettoyer::nettoyerInt($_GET['id']);
+
+            $mdlcom = new ModelComment();
+            if($mdlcom->getNbCommentByNews($id) != 0){
+                $mdlcom->deleteCommentByNews($id);
+            }
+
+            $mdl = new ModelNews();
+            $mdl->deleteNews($id);
+            header('Location: /');
+        }
     }
 
 }

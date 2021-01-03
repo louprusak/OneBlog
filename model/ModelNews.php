@@ -36,7 +36,7 @@ class ModelNews
      */
     public function deleteNews(int $idNews)
     {
-        $this->gateway->deleteNews();
+        $this->gateway->deleteNews($idNews);
     }
 
     /**
