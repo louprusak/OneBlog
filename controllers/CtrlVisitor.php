@@ -12,7 +12,6 @@ class CtrlVisitor
     public function __construct($action)
     {
 
-        session_start();
         //$action = $_GET['action'] ?? null;
         //print_r($action);
 

@@ -6,7 +6,7 @@ require_once('config/config.php');
 require_once('config/Autoload.php');
 Autoload::charger();
 
-
+session_start();
 
 require_once('controllers/FrontController.php');
 new FrontController();
