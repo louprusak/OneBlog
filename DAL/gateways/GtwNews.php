@@ -12,12 +12,6 @@ class GtwNews
      */
     private $con;
 
-    protected static string $dsn = 'mysql:host=localhost;dbname=blog';
-
-    protected static string $username = 'root';
-
-    protected static string $password = 'root';
-
     private $tabAllNews;
 
     private $tabNewsByDate;
@@ -30,7 +24,8 @@ class GtwNews
      */
     public function __construct()
     {
-        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
+        global $dsn, $password, $username;
+        $this->con = new Connection($dsn,$username,$password);
         $this->tabAllNews = array();
         $this->tabNewsByDate = array();
         $this->tabNewsByUser = array();

@@ -5,9 +5,6 @@
  */
 class GtwComment
 {
-    protected static $dsn='mysql:host=localhost;dbname=blog';
-    protected static $username='root';
-    protected static $password='root';
     private $con;
     private $tabAllComment;
     private $tabCommentByNews;
@@ -16,7 +13,8 @@ class GtwComment
      * GtwComment constructor.
      */
     public function __construct(){
-        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
+        global $dsn, $password, $username;
+        $this->con = new Connection($dsn,$username,$password);
         $this->tabAllComment=array();
         $this->tabCommentByNews=array();
     }

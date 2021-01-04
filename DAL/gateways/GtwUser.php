@@ -1,23 +1,20 @@
 <?php
 
-require_once('DAL/Connection.php');
+require_once('utils/Connection.php');
 
 /**
  * Class GtwUser
  */
 class GtwUser
 {
-    protected static string $dsn = 'mysql:host=localhost;dbname=blog';
-    protected static string $username = 'root';
-    protected static string $password = 'root';
     private Connection $con;
 
     /**
      * GtwUser constructor.
      */
     public function __construct(){
-
-        $this->con = new Connection($this::$dsn,$this::$username,$this::$password);
+        global $dsn, $password, $username;
+        $this->con = new Connection($dsn,$username,$password);
     }
 
     /**
