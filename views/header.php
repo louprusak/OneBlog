@@ -25,9 +25,14 @@
 
         $gtwcom = new GtwComment();
         $nbcom = $gtwcom->getNbComment();
+        $nbcomcookie = 0;
+
+        if(isset($_COOKIE['nbcom'])){
+            $nbcomcookie = $_COOKIE['nbcom'];
+        }
 
         echo "<h6 id=\"compteur\" class=\"col-xs-6 col-md-6 col-lg-2\"> Commentaires du site : ".$nbcom."</h6>";
-        echo "<h6 id=\"compteur\" class=\"col-xs-6 col-md-6 col-lg-2\"> Vos commentaires : "/*.$nbcom*/."</h6>";
+        echo "<h6 id=\"compteur\" class=\"col-xs-6 col-md-6 col-lg-2\"> Vos commentaires : ".$nbcomcookie."</h6>";
     ?>
 
 </header>

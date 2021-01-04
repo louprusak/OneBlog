@@ -11,6 +11,8 @@ class CtrlVisitor
      */
     public function __construct($action)
     {
+
+        session_start();
         //$action = $_GET['action'] ?? null;
         //print_r($action);
 
@@ -75,6 +77,13 @@ class CtrlVisitor
             $mdl = new ModelComment();
 
             $mdl->addComment($idnews,$login,$commentaire);
+
+            if(isset($_COOKIE['nbcom'])){
+                setcookie('nbcom',(int)Nettoyer::nettoyerInt($_COOKIE['nbcom'])+1,time()+365*24*3600);
+            }
+            else{
+                setcookie('nbcom',1,time()+356*24*3600);
+            }
 
             header('Location: /?action=readnews&id='.$idnews);
         }
