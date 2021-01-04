@@ -14,7 +14,6 @@
     <?php
     require('header.php');
 
-
     if(isset($news)){
     echo'
     <div id="news-container">
@@ -41,7 +40,8 @@
             </div>
             <hr class="separateur">
         </div>
-';}
+    ';
+    }
 
         if(isset($listComments) && !empty($listComments)){
             foreach ($listComments as $Comment) {

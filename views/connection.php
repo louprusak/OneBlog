@@ -15,7 +15,6 @@
     require('header.php');
     ?>
 
-
     <div id="connexion-container" class="row">
         <div id="connexion" class="col-lg-12">
             <h1>Connexion</h1>
@@ -34,12 +33,13 @@
                 <br><br><br>
                 <input class="btn-valid" type="submit" value="Se connecter">
                 <br><br>
-                <p>Vous n'êtes pas inscrit sur le site ? Pas de problème ! <a href="index.php?action=register">Cliquez pour commencer l'inscription</a></p>
+                <p>Vous n'êtes pas inscrit sur le site ? Pas de problème !
+                    <a href="index.php?action=register">Cliquez pour commencer l'inscription</a>
+                </p>
                 <br>
             </form>
         </div>
     </div>
-
 
 </div>
 </body>

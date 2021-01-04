@@ -6,10 +6,9 @@
  */
 class Nettoyer
 {
-
-
     /**
-     * @param string $string
+     * Fonction de nettoyage d'une chaine de caractères
+     * @param string|null $string
      * @return string
      */
     public static function nettoyerString(?string $string):string{
@@ -17,20 +16,8 @@ class Nettoyer
     }
 
     /**
-     * @param array $arrayString
-     * @return array
-     */
-    public static function nettoyerArrayInt(?array $arrayString):array{
-        $newArray = array();
-        if($arrayString == null) return $newArray;
-        foreach ($arrayString as $item) {
-            array_push($newArray,Nettoyer::nettoyerInt($item));
-        }
-        return $newArray;
-    }
-
-    /**
-     * @param string $int
+     * Fonction de nettoyage d'un entier
+     * @param string|null $int
      * @return string
      */
     public static function nettoyerInt(?string $int):string{

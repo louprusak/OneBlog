@@ -17,11 +17,12 @@ class Connection extends PDO {
     }
 
 
-    /** * @param string $query
+    /**
+     * Fonction qui exécute la requête SQL
+     * @param string $query
      * @param array $parameters *
      * @return bool Returns `true` on success, `false` otherwise
      */
-
     public function executeQuery(string $query, array $parameters = []) : bool{
         $this->stmt = parent::prepare($query);
         foreach ($parameters as $name => $value) {
@@ -30,6 +31,10 @@ class Connection extends PDO {
         return $this->stmt->execute();
     }
 
+    /**
+     * Fonction qui renvoie sous forme de tableau le résultat de la requête SQL
+     * @return array Résultat de la requête SQL
+     */
     public function getResults() : array {
         return $this->stmt->fetchall();
 

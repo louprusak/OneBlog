@@ -7,15 +7,9 @@ require ('model/metiers/News.php');
  */
 class GtwNews
 {
-    /**
-     * @var Connection Instance de la classe Connection pour accès à la base de données.
-     */
     private $con;
-
     private $tabAllNews;
-
     private $tabNewsByDate;
-
     private $tabNewsByUser;
 
 
@@ -50,8 +44,8 @@ class GtwNews
     }
 
     /**
-     * Fonction de suppression d'une news en fonction de son titre.
-     * @param int $id
+     * Fonction de suppression d'une news en fonction de son identifiant.
+     * @param int $id Identifiant de la news
      */
     public function deleteNews(int $id)
     {
@@ -76,17 +70,6 @@ class GtwNews
     }
 
     /**
-     * Fonction qui compte le nombre total de news en base de données.
-     * @return int Nombre de news
-     */
-    public function getNbNews():int
-    {
-        $query = 'SELECT count(*) FROM news';
-        $this->con->executeQuery($query);
-        return $this->con->getResults();
-    }
-
-    /**
      * Fonction qui retoure toutes les news postées à une date donnée en base de données.
      * @param string $date Date de recherche.
      * @return array Tableau d'instance métiers des news trouvées en base de données à la date donnée.
@@ -102,22 +85,12 @@ class GtwNews
         return $this->tabNewsByDate;
     }
 
-    /**
-     * Fonction qui retourne les news d'un utilisateur depuis la base de données.
-     * @param string $userLogin
-     * @return array Tableau d'instance métiers des news trouvées en base de données écrites par un utilisateur donné.
-     */
-    public function getNewsByUser(string $userLogin):array
-    {
-        $query = 'SELECT * FROM news WHERE auteur=:loginUser';
-        $this->con->executeQuery($query,array(':loginUser'=> $userLogin));
-        $results = $this->con->getResults();
-        foreach ($results as $row){
-            $this->tabNewsByUser[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
-        }
-        return $this->tabNewsByUser;
-    }
 
+    /**
+     * Fonction qui retourne une instance métier d'une news en base de donnée trouvée de par son identifiant
+     * @param int $idNews Identifiant de la news
+     * @return News Instance métier de la news retournée
+     */
     public function getNewsById(int $idNews):News
     {
         $query = 'SELECT * FROM news WHERE idNews=:idNews';

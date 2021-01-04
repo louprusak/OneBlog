@@ -71,20 +71,12 @@ class GtwComment
         return $results[0][0];
     }
 
+    /**
+     * Fonction qui supprime en base de données tous les commentaires d'une news donnée
+     * @param int $idNews
+     */
     public function deleteCommentByNews(int $idNews){
         $query = 'DELETE FROM comment WHERE idNews = :idNews';
         $this->con->executeQuery($query, array(':idNews'=> array($idNews,PDO::PARAM_INT)));
-    }
-
-    /**
-     * Fonction qui renvoie le nombre de commentaires d'un utilisateur donné.
-     * @param $idUser
-     * @return int Nombre de commentaires de l'utilisateur
-     */
-    public function getNbCommentByUser($idUser):int{
-        $query = 'SELECT COUNT(*) FROM comment WHERE auteur = :idUser';
-        $this->con->executeQuery($query,array(':idUser'=> array($idUser,PDO::PARAM_INT)));
-        $results = $this->con->getResults();
-        return $results[0][0];
     }
 }

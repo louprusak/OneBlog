@@ -11,34 +11,17 @@
 
 <body>
 
-
-
 <div class="container-fluid">
     <?php
     require('header.php');
     ?>
 
-    <!--<div class="row">
-        <div class="col-lg-12">
-            <a href="news.php">Exemple de lien menant vers la page complete d'une news</a><br>
-            <a href="error.php">Exemple de lien menant vers la page d'erreur</a><br>
-            <a href="searchResult.php">Exemple de lien menant vers la page principale admin</a><br>
-            <a href="addNews.php">Exemple de lien menant vers la page d'ajout de news</a>
-        </div>
-    </div>
-
-    <br><br><br><br><br>-->
-
     <div>
-
-
-
         <?php
 
         if(isset($_SESSION['login']) && !empty($_SESSION['login'])){
             echo "<br><br><h4 class=\"white\">Bienvenue ". strtoupper($_SESSION['login'])." !</h4>";
         }
-
 
         if (isset($listNews)) {
             foreach ($listNews as $news) {
@@ -64,7 +47,6 @@
                             </div>
                         </div>
                     </div>";
-
             }
         }else {
             echo "<h4 class=\"white\">Pas de news à afficher ...</h4>";

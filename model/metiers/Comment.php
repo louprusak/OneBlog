@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Class Comment
+ */
 class Comment
 {
     private $idComment;
@@ -27,6 +29,7 @@ class Comment
     }
 
     /**
+     * Getter de l'identifiant du commentaire
      * @return mixed
      */
     public function getIdComment()
@@ -35,14 +38,7 @@ class Comment
     }
 
     /**
-     * @param mixed $idComment
-     */
-    public function setIdComment($idComment)
-    {
-        $this->idComment = $idComment;
-    }
-
-    /**
+     * Getter de l'identifiant de la news associée du commentaire
      * @return mixed
      */
     public function getIdNews()
@@ -51,14 +47,7 @@ class Comment
     }
 
     /**
-     * @param mixed $idNews
-     */
-    public function setIdNews($idNews)
-    {
-        $this->idNews = $idNews;
-    }
-
-    /**
+     * Getter de l'auteur du commentaire
      * @return mixed
      */
     public function getAuteur()
@@ -67,30 +56,11 @@ class Comment
     }
 
     /**
-     * @param mixed $auteur
-     */
-    public function setAuteur($auteur)
-    {
-        $this->auteur = $auteur;
-    }
-
-    /**
+     * Getter du contenu du commentaire
      * @return mixed
      */
     public function getMessage()
     {
         return $this->message;
     }
-
-    /**
-     * @param mixed $message
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
-    }
-
-
-
-
 }

@@ -5,9 +5,6 @@
  */
 class ModelUser
 {
-    /**
-     * @var GtwUser Attribut gateway news
-     */
     private GtwUser $gateway;
 
     /**
@@ -19,7 +16,6 @@ class ModelUser
 
     /**
      * Fonction d'inscription d'un nouvel utilisateur du Model User.
-     *
      * @param string $login Login de l'utilisateur.
      * @param string $password Mot de passe de l'utilisateur.
      */
@@ -30,7 +26,6 @@ class ModelUser
 
     /**
      * Fonction de connection d'un utilisateur du Model User.
-     *
      * @param string $login Login de l'utilisateur à connecter.
      * @param string $mdp Mot de passe de l'utilisateur à connecter.
      * @return bool Retourne si la connection a été effectuée.
@@ -66,11 +61,6 @@ class ModelUser
         session_unset();
         session_destroy();
         $_SESSION = array();
-
-        /*if(isset($_SESSION['login']) && isset($_SESSION['role'])){
-            $_SESSION['login'] = "";
-            $_SESSION['role'] = "";
-        }*/
     }
 
     /**
@@ -94,17 +84,5 @@ class ModelUser
             return new User($loginNettoyer,$roleUser);
         }
         return null;
-    }
-
-    /**
-     * Fonction qui indique si l'utilisateur connecté est un admini
-     * @return bool
-     */
-    public function isAdmin() : bool
-    {
-        if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'){
-            return true;
-        }
-        return false;
     }
 }

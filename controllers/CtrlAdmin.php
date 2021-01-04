@@ -11,8 +11,6 @@ class CtrlAdmin
      */
     public function __construct($action)
     {
-        //$action = $_GET['action'] ?? null;
-
         try{
             switch(strtolower($action)){
                 case 'deletenews':
@@ -24,10 +22,10 @@ class CtrlAdmin
                     require('views/error.php');
             }
         }catch (PDOException $e){
-            $error = $e->getMessage().'Erreur lors de la connexion à la base de données.';
+            $error = 'Erreur lors de la connexion à la base de données.<br><br>Erreur plus précise : '.$e->getMessage();
             require('views/error.php');
         }catch (Exception $e2){
-            $error = 'Erreur lors de l\'éxécution du code du controller user';
+            $error = 'Erreur lors de l\'éxécution du code du controller user.<br><br>Erreur plus précise : '.$e2->getMessage();
             require('views/error.php');
         }
     }
@@ -38,7 +36,6 @@ class CtrlAdmin
     public function deleteNews()
     {
         if(isset($_GET['id'])){
-            // SI IL EXISTE DES COMMENTAIRE IL FAUT LES SUPPRIMER AVANT
             $id = Nettoyer::nettoyerInt($_GET['id']);
 
             $mdlcom = new ModelComment();

@@ -11,10 +11,6 @@ class CtrlVisitor
      */
     public function __construct($action)
     {
-
-        //$action = $_GET['action'] ?? null;
-        //print_r($action);
-
         try{
             switch(strtolower($action)){
                 case 'search':
@@ -38,13 +34,12 @@ class CtrlVisitor
 
             }
         }catch (PDOException $e){
-            $error = $e->getMessage().'Erreur lors de la connexion à la base de données.';
+            $error = 'Erreur lors de la connexion à la base de données.<br><br>Erreur plus précise : '.$e->getMessage();
             require_once('views/error.php');
         }catch (Exception $e2){
-            $error= 'Erreur lors de l\'éxécution du code du controller visiteur';
+            $error= 'Erreur lors de l\'éxécution du code du controller visiteur.<br><br>Erreur plus précise : '.$e2->getMessage();
             require_once('views/error.php');
         }
-
     }
 
     /**
@@ -159,6 +154,9 @@ class CtrlVisitor
 
     }
 
+    /**
+     * Fonction d'affichage en vue complète de la news selectionnée sur la page principale.
+     */
     public function readNews()
     {
         if(isset($_GET['id'])){

@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Class News
+ */
 class News
 {
     private $idNews;
@@ -13,7 +15,14 @@ class News
 
     private $auteur;
 
-
+    /**
+     * News constructor.
+     * @param $idNews
+     * @param $date
+     * @param $titre
+     * @param $description
+     * @param $auteur
+     */
     function __construct($idNews,$date,$titre,$description,$auteur)
     {
         $this->idNews = $idNews;
@@ -24,6 +33,7 @@ class News
     }
 
     /**
+     * Getter de l'identifiant de la news
      * @return mixed
      */
     public function getIdNews()
@@ -32,6 +42,7 @@ class News
     }
 
     /**
+     * Getter de la date de publication de la news
      * @return mixed
      */
     public function getDate()
@@ -40,14 +51,7 @@ class News
     }
 
     /**
-     * @param mixed $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
-
-    /**
+     * Getter du titre de la news
      * @return mixed
      */
     public function getTitre()
@@ -56,14 +60,7 @@ class News
     }
 
     /**
-     * @param mixed $titre
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-    }
-
-    /**
+     * Getter du contenu de la news
      * @return mixed
      */
     public function getDescription()
@@ -72,27 +69,11 @@ class News
     }
 
     /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-
-    /**
+     * Getter de l'auteur de la news
      * @return mixed
      */
     public function getAuteur()
     {
         return $this->auteur;
-    }
-
-    /**
-     * @param mixed $auteur
-     */
-    public function setAuteur($auteur)
-    {
-        $this->auteur = $auteur;
     }
 }

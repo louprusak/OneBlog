@@ -11,14 +11,10 @@
 
 <body>
 
-
-
 <div class="container-fluid">
     <?php
     require('header.php');
     ?>
-
-
 
     <div>
         <br><br><br>

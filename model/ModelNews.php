@@ -49,24 +49,6 @@ class ModelNews
     }
 
     /**
-     * Fonction qui retourne le nombre de news du site.
-     * @return int Nombre de news du site
-     */
-    public function getNbNews()
-    {
-        return $this->gateway->getnbNews();
-    }
-
-    /**
-     * @param $user
-     * @return array
-     */
-    public function getNewsByUser($user)
-    {
-        return $this->gateway->getNewsByUser($user);
-    }
-
-    /**
      * Fonction qui renvoie les news postées à une date spécifiée.
      * @param string $date Date de recherche.
      * @return array Tableau d'instance métiers des news à la date recherchée.
@@ -76,6 +58,11 @@ class ModelNews
         return $this->gateway->getNewsByDate($date);
     }
 
+    /**
+     * Fonction qui renvoie une news de part son identifiant
+     * @param int $idNews Identifiant de le news
+     * @return News Instance métier de la news
+     */
     public function getNewsById(int $idNews)
     {
         return $this->gateway->getNewsById($idNews);

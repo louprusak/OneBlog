@@ -25,10 +25,6 @@ class ModelComment
         return $this->gateway->getNbCommentByNews($idNews);
     }
 
-    public function getNbCommentByUser($idUser){
-        return $this->gateway->getNbCommentByUser($idUser);
-    }
-
     public function deleteCommentByNews($id)
     {
         $this->gateway->deleteCommentByNews($id);

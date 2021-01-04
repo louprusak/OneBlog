@@ -1,29 +1,27 @@
 <?php
 
-
+/**
+ * Class User
+ */
 class User
 {
-
-
-
-
-
     private string $login;
-
-
 
     private bool $role;
 
+    /**
+     * User constructor.
+     * @param $login
+     * @param $role
+     */
     public function __construct($login,$role)
     {
-
         $this->login = $login;
         $this->role = $role;
     }
 
-
-
     /**
+     * Getter de l'identifiant de l'utilisateur
      * @return mixed
      */
     public function getLogin():string
@@ -32,28 +30,11 @@ class User
     }
 
     /**
-     * @param mixed $login
-     */
-    public function setLogin($login)
-    {
-        $this->password = $login;
-    }
-
-
-
-    /**
+     * Getter du rôle de l'utilisateur
      * @return mixed
      */
     public function getRole():bool
     {
         return $this->role;
-    }
-
-    /**
-     * @param mixed $role
-     */
-    public function setRole(bool $role)
-    {
-        $this->role = $role;
     }
 }

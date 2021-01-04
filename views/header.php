@@ -18,13 +18,13 @@
                 echo "<a class=\"btn\" href=\"index.php?action=connection\">Se connecter</a>";
             }
             ?>
+
         </nav>
     </div>
 
     <?php
-
-        $gtwcom = new GtwComment();
-        $nbcom = $gtwcom->getNbComment();
+        $mdlcom = new ModelComment();
+        $nbcom = $mdlcom->getNbComment();
         $nbcomcookie = 0;
 
         if(isset($_COOKIE['nbcom'])){
