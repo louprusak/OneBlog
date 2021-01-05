@@ -38,4 +38,5 @@ Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux 
 
 Nous espérons que ce site vous sera utile et surtout vous plaira ! Bonne visite !
 
-Loup et Manoah :P
+
+**Loup et Manoah :P**
