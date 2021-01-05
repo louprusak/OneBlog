@@ -31,12 +31,12 @@ DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
   `idComment` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identifiant du commentaire',
   `idNews` int(11) NOT NULL COMMENT 'identifiant de la news concernées par le commentaire',
-  `auteur` varchar(30) NOT NULL COMMENT 'auteur du commentaire',
+  `auteur` varchar(30) DEFAULT NULL COMMENT 'auteur du commentaire',
   `message` varchar(300) NOT NULL COMMENT 'commentaire',
   PRIMARY KEY (`idComment`),
   KEY `COMMENT_AUTEUR` (`auteur`),
   KEY `COMMENT_NEWS` (`idNews`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `comment`
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`idNews`),
   UNIQUE KEY `UNIQUE_TITRE` (`titre`),
   KEY `NEWS_AUTEUR` (`auteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COMMENT='Table ModelNews du blog';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='Table ModelNews du blog';
 
 --
 -- Déchargement des données de la table `news`

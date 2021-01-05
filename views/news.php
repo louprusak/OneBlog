@@ -14,16 +14,15 @@
     <?php
     require('header.php');
 
-    if(isset($news)){
-    echo'
+    if(isset($news)){ ?>
     <div id="news-container">
         <div id="news" class="col-lg-12">
-            <h5>Posté par ' . strtoupper($news->getAuteur()). ' le ' .strtoupper($news->getDate()). '</h5>
+            <h5>Posté par <?= strtoupper($news->getAuteur())?> le <?=strtoupper($news->getDate())?></h5>
             <hr class="separateur">
             <br>
-            <h1 id="titre-news">'.$news->getTitre().'</h1>
+            <h1 id="titre-news"><?=$news->getTitre()?></h1>
             <br>
-            <p id="contenu-news">'.$news->getDescription().'</p>
+            <p id="contenu-news"><?=$news->getDescription()?></p>
 
         </div>
     </div>
@@ -35,27 +34,28 @@
                     <h5 id="titre-comment">Commentaires de la news</h5>
                 </div>
                 <div class="col-lg-6">
-                    <a class="btn" id="btn-add" href="index.php?action=addcomment&id='.$news->getIdNews().'">Ajouter un commentaire</a>
+                    <a class="btn" id="btn-add" href="index.php?action=addcomment&id=<?=$news->getIdNews()?>">Ajouter un commentaire</a>
                 </div>
             </div>
             <hr class="separateur">
         </div>
-    ';
-    }
+
+<?php    }
 
         if(isset($listComments) && !empty($listComments)){
-            foreach ($listComments as $Comment) {
-                echo '
+            foreach ($listComments as $Comment) { ?>
+
                     <div class="row">
                         <div id="index-news" class="col-lg-12">
                             <div id="index-news-contenu">
-                                <h6>Commentaire de '.strtoupper($Comment->getAuteur()).'</h6>
+                                <h6>Commentaire de  <?=!empty(strtoupper($Comment->getAuteur()))?strtoupper($Comment->getAuteur()):"Utilisateur Anomyme"?></h6>
                                 <hr class="hr-news">
-                                <p>'.$Comment->getMessage().'</p>
+                                <p><?=$Comment->getMessage()?></p>
                             </div>
 
                         </div>
-                    </div>';
+                    </div>
+                <?php
             }
         }
         else{

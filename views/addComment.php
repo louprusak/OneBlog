@@ -23,10 +23,6 @@
             <h5 id="auteur-news">Veuillez saisir les informations suivantes pour poster votre commentaire :</h5>
             <br>
             <form action="index.php?action=addcomment&id=<?=$_GET['id']?>" method="post" id="form-commentaire">
-                <label for="pseudo">Votre Pseudo :</label>
-                <br>
-                <input type="text" name="login">
-                <br>
                 <label for="commentaire">Votre Commentaire :</label>
                 <br>
                 <textarea name="commentaire" cols="80%" rows="7"></textarea>

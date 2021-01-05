@@ -63,8 +63,15 @@ class CtrlVisitor
      */
     public function addComment()
     {
-        if(isset($_POST['login']) && isset($_POST['commentaire']) && !empty($_POST['login']) && !empty($_POST['commentaire']) && isset($_GET['id'])){
-            $login = Nettoyer::nettoyerString($_POST['login']);
+        if(isset($_POST['commentaire']) && !empty($_POST['commentaire']) && isset($_GET['id'])){
+            if(isset($_SESSION['login']))
+            {
+                $login = Nettoyer::nettoyerString($_SESSION['login']);
+            }
+            else{
+                $login = null;
+            }
+
             $commentaire = Nettoyer::nettoyerString($_POST['commentaire']);
             $idnews = Nettoyer::nettoyerInt($_GET['id']);
 
