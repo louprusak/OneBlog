@@ -17,11 +17,11 @@ class News
 
     /**
      * News constructor.
-     * @param $idNews
-     * @param $date
-     * @param $titre
-     * @param $description
-     * @param $auteur
+     * @param int $idNews
+     * @param date $date
+     * @param string $titre
+     * @param string $description
+     * @param string $auteur
      */
     function __construct($idNews,$date,$titre,$description,$auteur)
     {

@@ -5,14 +5,14 @@
  */
 class User
 {
-    private string $login;
+    private $login;
 
-    private bool $role;
+    private $role;
 
     /**
      * User constructor.
-     * @param $login
-     * @param $role
+     * @param string $login
+     * @param boolean $role
      */
     public function __construct($login,$role)
     {
@@ -25,7 +25,7 @@ class User
      * @return mixed
      */
     public function getLogin():string
-    {
+     {
         return $this->login;
     }
 
