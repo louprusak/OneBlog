@@ -5,7 +5,8 @@
 
 ## Configuration
 
-1. Base de données
+1. Base de données:
+
 Vérifiez bien que les variables de base de données du site correspondent à vos paramètres personnels.
 Si cela n'est pas le cas, il faut changer le DSN, USERNAME et PASSWORD dans le fichier **config.php** qui se trouve dans le dossier **config**.
 Quand vous créez votre base n'oubliez de la passer elle ainsi que toutes les tables et toutes les colonnes en encodage **utf8mb4_general_ci**.
@@ -21,6 +22,7 @@ Si vous souhaitez le faire dans un autre dossier:
 ## A Propos
 
 1. Utilisateurs du site. 
+
 Sur ce site, les utilisateurs peuvent avoir des rôles différents :
 - Le ** simple visiteur** peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
 - **L'Utilisateur** s'est auparavant inscrit sur le site et peut en plus des actions du visiteur : se déconnecter, ajouter des news et supprimer seulement les news qu'il a écrit.
@@ -29,6 +31,7 @@ Dans la base de données, deux sont crées par défaut : _(loup loup),(manoah ma
 Impossible de rajouter de nouveaux administrateur, il faut le faire manuellement dans la base de données. Le seul existant est _(admin admin)_.
 
 2. Ajout de commentaires:
+
 Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux visiteurs de pouvoir rentrer un pseudo associé à son commentaire. Il sera donc marqué comme utilisateur anonyme. Seuls les utilisateurs connectés auront leur pseudo déjà rempli quand ils ajouteront un commentaire.
 
 ## Conclusion
