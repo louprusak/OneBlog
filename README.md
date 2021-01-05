@@ -20,7 +20,7 @@ Si vous souhaitez le faire dans un autre dossier:
 
 ## A Propos
 
-1. Utilisateurs du site
+1. Utilisateurs du site:
 Sur ce site, les utilisateurs peuvent avoir des rôles différents :
 - Le** simple visiteur** peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
 - **L'Utilisateur** s'est auparavant inscrit sur le site et peut en plus des actions du visiteur : se déconnecter, ajouter des news et supprimer seulement les news qu'il a écrit.
@@ -28,7 +28,7 @@ Dans la base de données, deux sont crées par défaut : _(loup loup),(manoah ma
 - **L'administrateur** peut faire tout ce que fait l'utilisateur normal à la différence qu'il peut supprimer n'importe quelle news.
 Impossible de rajouter de nouveaux administrateur, il faut le faire manuellement dans la base de données. Le seul existant est _(admin admin)_.
 
-2. Ajout de commentaires
+2. Ajout de commentaires:
 Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux visiteurs de pouvoir rentrer un pseudo associé à son commentaire. Il sera donc marqué comme utilisateur anonyme. Seuls les utilisateurs connectés auront leur pseudo déjà rempli quand ils ajouteront un commentaire.
 
 ## Conclusion
