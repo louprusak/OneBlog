@@ -22,14 +22,14 @@ Si vous souhaitez le faire dans un autre dossier:
 
 1. Utilisateurs du site
 Sur ce site, les utilisateurs peuvent avoir des rôles différents :
-- Le simple visiteur peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
-- L'Utilisateur s'est auparavant inscrit sur le site et peut en plus des actions du visiteur : se déconnecter, ajouter des news et supprimer seulement les news qu'il a écrit.
-Dans la base de données, deux sont crées par défaut : (loup loup),(manoah manoah).
-- L'administrateur peut faire tout ce que fait l'utilisateur normal à la différence qu'il peut supprimer n'importe quelle news.
-Impossible de rajouter de nouveaux administrateur, il faut le faire manuellement dans la base de données. Le seul existant est (admin admin).
+- Le** simple visiteur** peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
+- **L'Utilisateur** s'est auparavant inscrit sur le site et peut en plus des actions du visiteur : se déconnecter, ajouter des news et supprimer seulement les news qu'il a écrit.
+Dans la base de données, deux sont crées par défaut : _(loup loup),(manoah manoah)_.
+- **L'administrateur** peut faire tout ce que fait l'utilisateur normal à la différence qu'il peut supprimer n'importe quelle news.
+Impossible de rajouter de nouveaux administrateur, il faut le faire manuellement dans la base de données. Le seul existant est _(admin admin)_.
 
 2. Ajout de commentaires
-Par soucis de temps et d'une conception de base de données inachevée, l'ajout de commentaire en tant que simple utilisateur si l'on rentre un pseudo inconnu en base de données ne fonctionne pas. Ainsi pour ajouter un commentaire il faut rentrer comme pseudo un login déjà présent dans la base de données (seules les personnes inscrites peuvent donc ajouter des commentaires), sinon le site renvoie une page d'erreur.
+Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux visiteurs de pouvoir rentrer un pseudo associé à son commentaire. Il sera donc marqué comme utilisateur anonyme. Seuls les utilisateurs connectés auront leur pseudo déjà rempli quand ils ajouteront un commentaire.
 
 ## Conclusion
 
