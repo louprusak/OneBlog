@@ -34,6 +34,10 @@ Impossible de rajouter de nouveaux administrateur, il faut le faire manuellement
 
 Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux visiteurs de pouvoir rentrer un pseudo associé à son commentaire. Il sera donc marqué comme utilisateur anonyme. Seuls les utilisateurs connectés auront leur pseudo déjà rempli quand ils ajouteront un commentaire.
 
+3. Documentation:
+
+Vous retrouverez dans le dossier res/doc le diagramme de classes ainsi que le diagramme de cas d'utilisations.
+
 ## Conclusion
 
 Nous espérons que ce site vous sera utile et surtout vous plaira ! Bonne visite !
