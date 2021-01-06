@@ -8,10 +8,6 @@ require ('model/metiers/News.php');
 class GtwNews
 {
     private $con;
-    private $tabAllNews;
-    private $tabNewsByDate;
-    private $tabNewsByUser;
-
 
     /**
      * GtwNews constructor.
@@ -20,10 +16,6 @@ class GtwNews
     {
         global $dsn, $password, $username;
         $this->con = new Connection($dsn,$username,$password);
-        $this->tabAllNews = array();
-        $this->tabNewsByDate = array();
-        $this->tabNewsByUser = array();
-
     }
 
     /**
@@ -62,11 +54,7 @@ class GtwNews
         $query = 'SELECT * FROM news ORDER BY date DESC ';
         $params = array();
         $this->con->executeQuery($query,$params);
-        $results = $this->con->getResults();
-        foreach ($results as $row){
-            $this->tabAllNews[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
-        }
-        return $this->tabAllNews;
+        return $this->con->getResults();
     }
 
     /**
@@ -78,26 +66,19 @@ class GtwNews
     {
         $query = 'SELECT * FROM news WHERE date= :date';
         $this->con->executeQuery($query,array(':date'=> array($date, PDO::PARAM_STR)));
-        $results = $this->con->getResults();
-        foreach ($results as $row){
-            $this->tabNewsByDate[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
-        }
-        return $this->tabNewsByDate;
+        return $this->con->getResults();
     }
 
 
     /**
      * Fonction qui retourne une instance métier d'une news en base de donnée trouvée de par son identifiant
      * @param int $idNews Identifiant de la news
-     * @return News Instance métier de la news retournée
+     * @return array
      */
-    public function getNewsById(int $idNews):News
+    public function getNewsById(int $idNews):array
     {
         $query = 'SELECT * FROM news WHERE idNews=:idNews';
         $this->con->executeQuery($query,array(':idNews'=> array($idNews,PDO::PARAM_INT)));
-        $results = $this->con->getResults();
-        $results = count($results) != 0 ? $results[0] : null;
-
-        return new News($results['idNews'],$results['date'],$results['titre'],$results['description'],$results['auteur']);
+        return $this->con->getResults();
     }
 }

@@ -45,7 +45,11 @@ class ModelNews
      */
     public function getAllNews()
     {
-        return $this->gateway->getAllNews();
+        $results = $this->gateway->getAllNews();
+        foreach ($results as $row){
+            $tabAllNews[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
+        }
+        return $tabAllNews;
     }
 
     /**
@@ -55,7 +59,11 @@ class ModelNews
      */
     public function getNewsByDate(string $date)
     {
-        return $this->gateway->getNewsByDate($date);
+        $results = $this->gateway->getNewsByDate($date);
+        foreach ($results as $row){
+            $tabNewsByDate[] = new News($row['idNews'],$row['date'],$row['titre'],$row['description'],$row['auteur']);
+        }
+        return $tabNewsByDate;
     }
 
     /**
@@ -65,6 +73,9 @@ class ModelNews
      */
     public function getNewsById(int $idNews)
     {
-        return $this->gateway->getNewsById($idNews);
+        $results = $this->gateway->getNewsById($idNews);
+        $results = count($results) != 0 ? $results[0] : null;
+
+        return new News($results['idNews'],$results['date'],$results['titre'],$results['description'],$results['auteur']);
     }
 }

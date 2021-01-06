@@ -6,8 +6,6 @@
 class GtwComment
 {
     private $con;
-    private $tabAllComment;
-    private $tabCommentByNews;
 
     /**
      * GtwComment constructor.
@@ -41,11 +39,7 @@ class GtwComment
     public function getCommentByNews($idNews):array{
         $query = 'SELECT * FROM comment WHERE idNews = :idNews';
         $this->con->executeQuery($query,array(':idNews'=> array($idNews,PDO::PARAM_INT)));
-        $results=$this->con->getResults();
-        foreach ($results as $row){
-            $this->tabCommentByNews[] = new Comment($row['idComment'],$row['idNews'],$row['auteur'],$row['message']);
-        }
-        return $this->tabCommentByNews;
+        return $this->con->getResults();
     }
 
     /**
