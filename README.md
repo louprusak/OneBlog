@@ -24,7 +24,7 @@ Si vous souhaitez le faire dans un autre dossier:
 1. Utilisateurs du site. 
 
 Sur ce site, les utilisateurs peuvent avoir des rôles différents :
-- Le ** simple visiteur** peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
+- Le **simple visiteur** peut : se connecter, s'inscrire, rechercher des news, ajouter un commentaire sur une news et lire une news.
 - **L'Utilisateur** s'est auparavant inscrit sur le site et peut en plus des actions du visiteur : se déconnecter, ajouter des news et supprimer seulement les news qu'il a écrit.
 Dans la base de données, deux sont crées par défaut : _(loup loup),(manoah manoah)_.
 - **L'administrateur** peut faire tout ce que fait l'utilisateur normal à la différence qu'il peut supprimer n'importe quelle news.
