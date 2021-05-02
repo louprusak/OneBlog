@@ -38,6 +38,20 @@ Nous avons choisi lors de l'ajout de commentaires de ne pas donner le choix aux 
 
 Vous retrouverez dans le dossier res/doc le diagramme de classes ainsi que le diagramme de cas d'utilisations.
 
+## Visuels
+
+**Home page:**
+![](/res/doc/home.png)
+
+**Admin or connected home page:**
+![](/res/doc/admin.png)
+
+**News page:**
+![](/res/doc/news.png)
+
+**Connect page:**
+![](/res/doc/connect.png)
+
 ## Conclusion
 
 Nous espérons que ce site vous sera utile et surtout vous plaira ! Bonne visite !
