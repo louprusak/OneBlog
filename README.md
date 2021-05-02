@@ -52,9 +52,3 @@ Vous retrouverez dans le dossier res/doc le diagramme de classes ainsi que le di
 **Connect page:**
 ![](/res/doc/connect.png)
 
-## Conclusion
-
-Nous espérons que ce site vous sera utile et surtout vous plaira ! Bonne visite !
-
-
-**Loup et Manoah :P**
